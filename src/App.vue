@@ -10,13 +10,10 @@ import "tw-elements";
 import { game } from "./game.js";
 import basicdata from './data/basicdata.json'
 
-
+//test
 
 
 onBeforeMount(()=>{
-
-    
-
 if(allword.value.length===0||categoryAll.value.length===0){
      basicdata.forEach(x=>{ 
     let arr = []
@@ -30,7 +27,6 @@ if(allword.value.length===0||categoryAll.value.length===0){
     }
      )
 }
-  
 })
 
 ///HOWTOUSE
