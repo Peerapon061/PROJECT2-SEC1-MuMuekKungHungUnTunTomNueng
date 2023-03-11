@@ -10,7 +10,7 @@ import "tw-elements";
 import { game } from "./game.js";
 import basicdata from './data/basicdata.json'
 
-//test
+
 
 
 onBeforeMount(()=>{
@@ -450,7 +450,7 @@ const filterSearch = computed(() => {
                       ? 'sm:dark:bg-slate-50 sm:rounded-lg sm:bg-indigo-100'
                       : ''
                   ">
-                  แสดงคำศัพท์
+                  คำศัพท์ทั้งหมด
                 </li>
                 <li
                   class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer"
@@ -459,7 +459,7 @@ const filterSearch = computed(() => {
                       ? 'sm:dark:bg-slate-50 sm:rounded-lg sm:bg-indigo-100'
                       : ''
                   ">
-                  หมวดหมู่
+                  หมวดหมู่คำศัพท์
                 </li>
                 <li
                   class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer"
@@ -468,7 +468,7 @@ const filterSearch = computed(() => {
                       ? 'sm:dark:bg-slate-50 sm:rounded-lg sm:bg-indigo-100'
                       : ''
                   ">
-                  ทายคำศัพท์
+                  เกมส์
                 </li>
                 <li>
                   <label class="swap swap-rotate">
@@ -496,7 +496,7 @@ const filterSearch = computed(() => {
             </svg>
           </div>
           <div>
-            <p class="font-bold">สร้างรายการคำศัพท์สำเร็จ</p>
+            <p class="font-bold">สร้างหมวดหมู่คำศัพท์สำเร็จ</p>
           </div>
         </div>
       </div>
@@ -510,7 +510,7 @@ const filterSearch = computed(() => {
             </svg>
           </div>
           <div>
-            <p class="font-bold">อัพเดตรายการคำศัพท์สำเร็จ</p>
+            <p class="font-bold">อัพเดตหมวดหมู่คำศัพท์สำเร็จ</p>
           </div>
         </div>
       </div>
@@ -524,8 +524,8 @@ const filterSearch = computed(() => {
             </svg>
           </div>
           <div>
-            <p class="font-bold">สร้างรายการคำศัพท์ไม่สำเร็จ</p>
-            <p class="text-sm">พบข้อผิดพลาดที่ชื่อคำศัพท์หรือรายการคำศัพท์</p>
+            <p class="font-bold">สร้างหมวดหมู่คำศัพท์ไม่สำเร็จ</p>
+            <p class="text-sm">พบข้อผิดพลาดที่ชื่อคำศัพท์หรือหมู่คำศัพท์</p>
           </div>
         </div>
       </div>
@@ -581,7 +581,7 @@ const filterSearch = computed(() => {
           </div>
           <div>
             <p class="font-bold">เพิ่มคำศัพท์ไม่สำเร็จ</p>
-            <p class="text-sm">คำศัพท์/ความหมายมีความยาวมากเกินไป</p>
+            <p class="text-sm">คำศัพท์/ความหมายมีความยาวมากเกินไป:คำศัพท์ควรมีไม่เกิน 70 ตัวอักษร</p>
           </div>
         </div>
       </div>
@@ -660,16 +660,16 @@ const filterSearch = computed(() => {
             </div>
             <div>
               <p class="font-bold">ไม่สามารถเริ่มเกมส์ได้</p>
-              <p class="text-sm">กรุณาเลือกชุดคำศัพท์ที่ต้องการเล่น</p>
+              <p class="text-sm">กรุณาเลือกหมวดหมู่คำศัพท์ที่ต้องการเล่น</p>
             </div>
           </div>
         </div>
         <div class="flex justify-center mt-10">
-          <label class="mr-1 pt-1 dark:text-white">กรุณาเลือกชุดคำศัพท์ที่ต้องการเล่น :</label>
+          <label class="mr-1 pt-1 dark:text-white">กรุณาเลือกหมวดหมู่คำศัพท์ที่ต้องการเล่น :</label>
           <select
             class="dark:bg-gray-300 placeholder:text-blue-300 placeholder:italic placeholder:uppercase w-44 px-5 py-2 rounded-2xl outline-none"
             v-model="lists">
-            <option disabled selected>ชุดคำศัพท์</option>
+            <option disabled selected>หมวดหมู่คำศัพท์</option>
             <option v-for="item in list">{{ item }}</option>
           </select>
         </div>
@@ -808,14 +808,14 @@ const filterSearch = computed(() => {
                 <!--body-->
                 <div id="AddCata" class="relative p-6 flex-auto h-96">
                   <div class="w-full md:flex space-x-2 sm:grid sm:grid-cols-1">
-                    <label for="NameNote"> ชื่อรายการคำศัพท์ที่ต้องการเพิ่ม/เเก้ไข </label>
+                    <label for="NameNote"> ชื่อหมวดหมู่คำศัพท์ที่ต้องการเพิ่ม/เเก้ไข </label>
                     <input class="border-2 rounded-lg border-slate-100" type="text" ref="NameNoteTyping" id="NameNote"
                       v-model.trim="nameNote" />
-                    <span> รายการคำศัพท์ทั้งหมด : </span>
+                    <span> หมวดหมู่คำศัพท์ทั้งหมด : </span>
                     <!-- <select v-show="categoryAll.length===0">  <option disabled value="">category</option> </select> -->
                     <select class="border-2 rounded-lg border-slate-100" v-model="categorySelected"
                       @change="CheckAlready">
-                      <option disabled value="">แสดงรายการ</option>
+                      <option disabled value="">แสดงหมวดหมู่</option>
                       <option :value="category.nameNote" v-for="(category, index) in categoryAll" :key="index">
                         {{ category.nameNote }}
                       </option>
@@ -856,7 +856,7 @@ const filterSearch = computed(() => {
             class="flex flex-col w-1/5 max-h-full py-32 space-y-10 relative top-10 bg-slate-200 dark:bg-slate-800 sm:hidden">
             <button @click="toggleModal('AddCata')" :class="showModal['AddCata'] ? 'bg-slate-600' : 'bg-lime-600/80'"
               class="w-4/5 mx-auto text-white hover:bg-slate-300 hover:text-gray-600 font-bold py-2 px-4 rounded">
-              เพิ่มชุดคำศัพท์
+              เพิ่มหมวดหมู่คำศัพท์
             </button>
             <button :class="
               !DeleteIcon || categoryAll.length === 0
@@ -864,7 +864,7 @@ const filterSearch = computed(() => {
                 : 'bg-slate-600'
             " @click="DeleteIconShow"
               class="w-4/5 mx-auto text-white hover:bg-slate-300 hover:text-gray-600 font-bold py-2 px-4 rounded">
-              จัดการชุดคำศัพท์
+              จัดการหมวดหมู่คำศัพท์
             </button>
           </div>
           <div class="flex flex-col relative h-full top-10 m-auto w-4/5 bg-white/30 font-bold sm:w-full sm:h-[29.5rem] " :class="hid==1?'sm:hidden':''">
@@ -921,7 +921,7 @@ const filterSearch = computed(() => {
       <div class=" flex bottom-0 absolute w-full">
         <button @click="toggleModal('AddCata')" :class="showModal['AddCata'] ? 'bg-slate-600' : 'bg-lime-600/80'"
           class="w-4/5 mx-auto text-white hover:bg-slate-300 hover:text-gray-600 font-bold py-2 px-4 rounded">
-          เพิ่มชุดคำศัพท์
+          เพิ่มหมวดหมู่คำศัพท์
         </button>
         <button :class="
           !DeleteIcon || categoryAll.length === 0
@@ -929,7 +929,7 @@ const filterSearch = computed(() => {
             : 'bg-slate-600'
         " @click="DeleteIconShow"
           class="w-4/5 mx-auto text-white hover:bg-slate-300 hover:text-gray-600 font-bold py-2 px-4 rounded">
-          ลบชุดคำศัพท์
+          ลบหมวดหมู่คำศัพท์
         </button>
       </div>
     </div>
