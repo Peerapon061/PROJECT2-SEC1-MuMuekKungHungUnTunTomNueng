@@ -91,6 +91,31 @@ const makewords = (word, meaning) => {
     setTimeout(() => {
       nocompletex.value = 0;
     }, 2550);
+  }
+  else if(meaning.includes(",")){
+    let listmeaning=meaning.split(",")
+    let check = findword(word);
+    if(check.length==0){
+      let x = new myword(word.trim(), listmeaning[0]);
+      for(let i=1;i<listmeaning.length;i++){
+        x.addmeanning(listmeaning[i])
+      }
+      allword.value.push(x)
+    }else{
+      let words = allword.value.find((x) => x.word == word)
+      listmeaning.forEach((x)=>{
+        let checkmean=0
+      words.meaning.forEach((y)=>{
+        if(y===x){
+          checkmean=1
+        }
+      })
+      if(checkmean===0){
+        words.addmeanning(x)
+      }
+      })
+    }
+    console.log(x);
   } else {
     resetInput();
     let check = findword(word);
