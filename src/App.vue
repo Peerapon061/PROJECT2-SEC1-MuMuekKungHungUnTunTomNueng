@@ -97,7 +97,7 @@ const makewords = (word, meaning) => {
     setTimeout(() => {
       notnulls.value = 0;
     }, 2550);
-  } else if (word.length > 70 || meaning.length > 70) {
+  } else if (word.length > 45 || meaning.length > 70) {
     resetInput();
     nocompletex.value = 1;
     setTimeout(() => {
@@ -114,10 +114,13 @@ const makewords = (word, meaning) => {
           addcomplete.value = 0;
         }, 2550);
       } else {
-        nocomplete.value = 1;
-        setTimeout(() => {
-          nocomplete.value = 0;
-        }, 2550);
+        let words=allword.value.find((x)=>x.word==word)
+        let resault=words.addmeanning(meaning)
+        if(resault==0){
+             console.log("cant");
+        }else{
+          console.log("complete");
+        }
       }
   }
 };
@@ -283,7 +286,7 @@ var addlistcomplete = ref(false);
 var updatecomplete = ref(false);
 const categoryAll = ref([]);
 
-const showModal = ref({ window: false, AddCata: false, vocab: false });
+const showModal = ref({ window: false, AddCata: false, vocab: false ,EditNote:false });
 let ListVocab = ref([]);
 const DeleteIcon = ref(false);
 const DeleteIconShow = () => {
@@ -301,16 +304,29 @@ const checkedActivities = computed(() => {
 const toggleModal = (id) => {
   showModal.value["window"] = !showModal.value["window"];
   showModal.value[id] = !showModal.value[id];
+
 };
 const categorySelected = ref("");
 const NameNoteTyping = ref();
 const CheckAlready = () => {
+  
+  allword.value.forEach(x=>x.selected=false)
+  let listCategorySelected  = (categoryAll.value.find(cata=> cata.nameNote === categorySelected.value)).vocabs.map(y=>y.word)
+  allword.value.forEach(x=>{
+    
+    if( listCategorySelected.includes(x.word) ){ 
+    x.selected = true 
+    }
+  } )
   nameNote = categorySelected.value;
-  categorySelected.value = "";
+  categorySelected.value = ""; 
+
+
 };
 
 const ListVocabByCategory = (nameNote_) => {    
   toggleModal("vocab");
+
   ListVocab.value = categoryAll.value
     .filter((category) => category.nameNote === nameNote_)
     .map((x) => x.vocabs)
@@ -320,7 +336,7 @@ const AddToCatagories = () => {
   toggleModal("AddCata");
   if (
     nameNote === "" ||
-    allword.value.every((word) => word.selected === false) || nameNote.length>12 
+    allword.value.every((word) => word.selected === false) || nameNote.length>18
   ) {
     listnocomplete.value = 1;
     setTimeout(() => {
@@ -332,6 +348,7 @@ const AddToCatagories = () => {
     obj.vocabs = allword.value.filter((y) => y.selected);
     nameNote = "";
     updatecomplete.value = 1;
+    allword.value.forEach(x=>x.selected=false)
     setTimeout(() => {
       updatecomplete.value = 0;
     }, 2550);
@@ -341,6 +358,7 @@ const AddToCatagories = () => {
       vocabs: allword.value.filter((wordSelected) => wordSelected.selected),
     });
     nameNote = "";
+   allword.value.forEach(x=>x.selected=false)
     addlistcomplete.value = 1;
     setTimeout(() => {
       addlistcomplete.value = 0;
@@ -348,6 +366,29 @@ const AddToCatagories = () => {
     
   }
 };
+
+  // Edit Category
+  
+  const Cards = ref([])
+  const TargetCard = ref()
+  const EditFunction =(event)=> { 
+    Cards.value.forEach(x=>{if(x.id == event.target.id){
+      TargetCard.value = x 
+    }})
+
+  }
+
+
+  const EditColor = (event)=>{ 
+  
+
+    
+
+  }
+
+
+
+// end of category
 const searchKeyword = ref("");
 const filterSearch = computed(() => {
   console.log(allword.value);
@@ -892,29 +933,7 @@ const filterSearch = computed(() => {
                 </div>
             </div>
           </div>      
-<!--             
-            <draggable :list="categoryAll" :disabled="!DeleteIcon"
-              class="md:mt-20 m-auto w-4/5 justify-center h-4/5 overflow-y-auto flex flex-wrap sm:h-full overflow-x-hidden"
-              ghost-class="ghost" @start="dragging = true" @end="dragging = false">
-              <template #item="{ element }">
-                <div
-                  class="flex flex-col justify-between items-center text-2xl w-72 h-44 m-2 hover:drop-shadow-2xl transition duration-300 pb-4 rounded-xl bg-[url('../IMG/bright.jpg')] bg-center dark:bg-center dark:bg-top dark:bg-[url('../IMG/dark.jpg')]">
-                  <div :id="element.nameNote" :class="DeleteIcon ? 'visible' : 'invisible'"
-                    class="w-full flex justify-end">
-                    <span @click="Deletefunction($event)" :id="element.nameNote"
-                      class="bg-transparent text-red-900 h-8 w-9 text-4xl block outline-none focus:outline-none cursor-pointer">
-                      ×
-                    </span>
-                  </div>
-                  <div>{{ element.nameNote }}</div>
-                  <button @click="ListVocabByCategory(element.nameNote)"
-                    class="w-4/5 flex space-x-3 justify-center text-lg bg-transparent border border-gray-700 text-black mx-auto hover:bg-slate-600 hover:text-white py-2 px-4 rounded-lg">
-                    แสดงคำศัพท์
-                    <iconBooks class="ml-2 mt-2" />
-                  </button>
-                </div>
-              </template>
-            </draggable> -->
+
           </div>
         </div>
         <div v-show="category" class="md:hidden" :class="[darks === 0 ? 'dark' : '',hid==1?'hidden':'']" >
