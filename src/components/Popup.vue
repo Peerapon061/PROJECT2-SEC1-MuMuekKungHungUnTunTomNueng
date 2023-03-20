@@ -9,7 +9,6 @@
 
 
                  const finalMessage = computed(()=>{
-                  console.log(props.status)
                   
                         if(props.status ==='win') return 'YON WIN! '
                         if(props.status ==='lost') return 'NICE TRY'
@@ -20,13 +19,6 @@
                  })
                
 
-                  const reset =()=>{
-                          this.$emit("reset",reset)
-                 }
-             
-                    // const reset = ()=>{
-                    //     return ''
-                    // } 
 
 </script> 
 

@@ -31,13 +31,7 @@ h1 {
 
 
 
-.word {
-  display: flex;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+
 
 .letter {
   border-bottom: 3px solid #29b960;
