@@ -44,7 +44,6 @@ const status = computed(()=>
 })
 const reset = () => {
     guessedLetters.value =[]
-    wrongLetters.value =[]
     word.value = randomWord();
     resetkb.value++
 }
@@ -54,13 +53,20 @@ let resetkb=ref(0)
 
 <template>
     <div>
-        <Header />
+        <Header  class="mt-10 mb-10"/>
+        <div class=" grid justify-center items-center">
+        <div class="flex justify-center items-center">
         <Figure :wrongcount="wrongLetters.length" />
+    </div>
+        <div class="flex justify-center items-center">
         <Word :letters="letters" :correct-letters="correctLetters" />
-        
+        </div>
+    </div>
     </div>
     <div>
-    <keyboard @press="clickKd" :wordques="word" :statuscode="resetkb"  />
+        <div class="  my-28 grid justify-center items-center">
+    <keyboard  @press="clickKd($event)" :wordques="word" :statuscode="resetkb"  />
+    </div>                        
     <Pop :status="status " :word="word" @reset ="reset" />
     </div>
 </template>

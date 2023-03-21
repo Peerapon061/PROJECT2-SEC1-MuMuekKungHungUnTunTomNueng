@@ -1,6 +1,7 @@
 <script setup>
 import buttonletter from "./components/button.vue";
 import { ref,computed } from "vue ";
+defineEmits(['press'])
 const props = defineProps({ wordques: { type: String, default: " " },statuscode:{type:Number,default:1} });
 let wordsplit=computed(()=>{
   return props.wordques.split("")
