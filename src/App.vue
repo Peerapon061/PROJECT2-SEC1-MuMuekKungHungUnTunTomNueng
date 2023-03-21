@@ -46,7 +46,7 @@ const reset = () => {
     guessedLetters.value =[]
     wrongLetters.value =[]
     word.value = randomWord();
-    resetkb.value=1
+    resetkb.value++
 }
 let resetkb=ref(0)
 
@@ -60,7 +60,7 @@ let resetkb=ref(0)
         
     </div>
     <div>
-    <keyboard @press="clickKd" :wordques="word" :status="resetkb" />
+    <keyboard @press="clickKd" :wordques="word" :statuscode="resetkb"  />
     <Pop :status="status " :word="word" @reset ="reset" />
     </div>
 </template>

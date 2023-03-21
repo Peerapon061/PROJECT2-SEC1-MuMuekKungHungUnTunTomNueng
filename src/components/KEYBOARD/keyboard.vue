@@ -1,15 +1,12 @@
 <script setup>
 import buttonletter from "./components/button.vue";
 import { ref,computed } from "vue ";
-const props = defineProps({ wordques: { type: String, default: " " },status:{type:Number,default:0} });
+const props = defineProps({ wordques: { type: String, default: " " },statuscode:{type:Number,default:1} });
 let wordsplit=computed(()=>{
   return props.wordques.split("")
 })
 
-function logx() {
-  console.log(props.status);
-  console.log(test);
-}
+
 function pressx(letter) {
   switch (letter) {
     case "A":
@@ -131,47 +128,77 @@ let status_x = ref(0);
 let status_y = ref(0);
 let status_z = ref(0);
 ////
-const test=computed((status)=>{
-return status
+const statusbutton=computed(()=>{
+ if(props.statuscode>=1){
+  status_a.value=0
+  status_b.value=0
+  status_c.value=0
+  status_d.value=0
+  status_e.value=0
+  status_f.value=0
+  status_g.value=0
+  status_h.value=0
+  status_i.value=0
+  status_j.value=0
+  status_k.value=0
+  status_l.value=0
+  status_m.value=0
+  status_n.value=0
+  status_o.value=0
+  status_p.value=0
+  status_q.value=0
+  status_r.value=0
+  status_s.value=0
+  status_t.value=0
+  status_u.value=0
+  status_v.value=0
+  status_w.value=0
+  status_x.value=0
+  status_y.value=0
+  status_z.value=0
+ }
+ 
 })
+
 
 
 </script>
 
 <template>
   <div class="flex">
-    <buttonletter lettterkey="Q" @down="$emit('press', 'Q');pressx('Q');" :statusdis="status_q" :correct="correct('q')"/>
-    <buttonletter lettterkey="W" @down="$emit('press', 'W');pressx('W');" :statusdis="status_w" :correct="correct('w')"/>
-    <buttonletter lettterkey="E" @down="$emit('press', 'E');pressx('E');" :statusdis="status_e" :correct="correct('e')"/>
-    <buttonletter lettterkey="R" @down="$emit('press', 'R');pressx('R');" :statusdis="status_r" :correct="correct('r')"/>
-    <buttonletter lettterkey="T" @down="$emit('press', 'T');pressx('T');" :statusdis="status_t" :correct="correct('t')"/>
-    <buttonletter lettterkey="Y" @down="$emit('press', 'Y');pressx('Y');" :statusdis="status_y" :correct="correct('y')"/>
-    <buttonletter lettterkey="U" @down="$emit('press', 'U');pressx('U');" :statusdis="status_u" :correct="correct('u')"/>
-    <buttonletter lettterkey="I" @down="$emit('press', 'I');pressx('I');" :statusdis="status_i" :correct="correct('i')"/>
-    <buttonletter lettterkey="O" @down="$emit('press', 'O');pressx('O');" :statusdis="status_o" :correct="correct('o')"/>
-    <buttonletter lettterkey="P" @down="$emit('press', 'P');pressx('P');" :statusdis="status_p" :correct="correct('p')"/>
+    <h1 class="hidden">{{ statusbutton }}</h1>
+    <buttonletter lettterkey="Q" @click="$emit('press', 'Q');pressx('Q');" :statusdis="status_q" :correct="correct('q')"/>
+    <buttonletter lettterkey="W" @click="$emit('press', 'W');pressx('W');" :statusdis="status_w" :correct="correct('w')"/>
+    <buttonletter lettterkey="E" @click="$emit('press', 'E');pressx('E');" :statusdis="status_e" :correct="correct('e')"/>
+    <buttonletter lettterkey="R" @click="$emit('press', 'R');pressx('R');" :statusdis="status_r" :correct="correct('r')"/>
+    <buttonletter lettterkey="T" @click="$emit('press', 'T');pressx('T');" :statusdis="status_t" :correct="correct('t')"/>
+    <buttonletter lettterkey="Y" @click="$emit('press', 'Y');pressx('Y');" :statusdis="status_y" :correct="correct('y')"/>
+    <buttonletter lettterkey="U" @click="$emit('press', 'U');pressx('U');" :statusdis="status_u" :correct="correct('u')"/>
+    <buttonletter lettterkey="I" @click="$emit('press', 'I');pressx('I');" :statusdis="status_i" :correct="correct('i')"/>
+    <buttonletter lettterkey="O" @click="$emit('press', 'O');pressx('O');" :statusdis="status_o" :correct="correct('o')"/>
+    <buttonletter lettterkey="P" @click="$emit('press', 'P');pressx('P');" :statusdis="status_p" :correct="correct('p')"/>
   </div>
   <div class="flex ml-8 mt-3">
-    <buttonletter lettterkey="A" @down="$emit('press', 'A');pressx('A');" :statusdis="status_a" :correct="correct('a')"/>
-    <buttonletter lettterkey="S" @down="$emit('press', 'S');pressx('S');" :statusdis="status_s" :correct="correct('s')"/>
-    <buttonletter lettterkey="D" @down="$emit('press', 'D');pressx('D');" :statusdis="status_d" :correct="correct('d')"/>
-    <buttonletter lettterkey="F" @down="$emit('press', 'F');pressx('F');" :statusdis="status_f" :correct="correct('f')"/>
-    <buttonletter lettterkey="G" @down="$emit('press', 'G');pressx('G');" :statusdis="status_g" :correct="correct('g')"/>
-    <buttonletter lettterkey="H" @down="$emit('press', 'H');pressx('H');" :statusdis="status_h" :correct="correct('h')"/>
-    <buttonletter lettterkey="J" @down="$emit('press', 'J');pressx('J');" :statusdis="status_j" :correct="correct('j')"/>
-    <buttonletter lettterkey="K" @down="$emit('press', 'K');pressx('K');" :statusdis="status_k" :correct="correct('k')"/>
-    <buttonletter lettterkey="L" @down="$emit('press', 'L');pressx('L');" :statusdis="status_l" :correct="correct('l')"/>
+    <buttonletter lettterkey="A" @click="$emit('press', 'A');pressx('A');" :statusdis="status_a" :correct="correct('a')"/>
+    <buttonletter lettterkey="S" @click="$emit('press', 'S');pressx('S');" :statusdis="status_s" :correct="correct('s')"/>
+    <buttonletter lettterkey="D" @click="$emit('press', 'D');pressx('D');" :statusdis="status_d" :correct="correct('d')"/>
+    <buttonletter lettterkey="F" @click="$emit('press', 'F');pressx('F');" :statusdis="status_f" :correct="correct('f')"/>
+    <buttonletter lettterkey="G" @click="$emit('press', 'G');pressx('G');" :statusdis="status_g" :correct="correct('g')"/>
+    <buttonletter lettterkey="H" @click="$emit('press', 'H');pressx('H');" :statusdis="status_h" :correct="correct('h')"/>
+    <buttonletter lettterkey="J" @click="$emit('press', 'J');pressx('J');" :statusdis="status_j" :correct="correct('j')"/>
+    <buttonletter lettterkey="K" @click="$emit('press', 'K');pressx('K');" :statusdis="status_k" :correct="correct('k')"/>
+    <buttonletter lettterkey="L" @click="$emit('press', 'L');pressx('L');" :statusdis="status_l" :correct="correct('l')"/>
   </div>
   <div class="flex ml-32 mt-3">
-    <buttonletter lettterkey="Z" @down="$emit('press', 'Z');pressx('Z');" :statusdis="status_z" :correct="correct('z')"/>
-    <buttonletter lettterkey="X" @down="$emit('press', 'X');pressx('X');" :statusdis="status_x" :correct="correct('x')"/>
-    <buttonletter lettterkey="C" @down="$emit('press', 'C');pressx('C');" :statusdis="status_c" :correct="correct('c')"/>
-    <buttonletter lettterkey="V" @down="$emit('press', 'V');pressx('V');" :statusdis="status_v" :correct="correct('v')"/>
-    <buttonletter lettterkey="B" @down="$emit('press', 'B');pressx('B');" :statusdis="status_b" :correct="correct('b')"/>
-    <buttonletter lettterkey="N" @down="$emit('press', 'N');pressx('N');" :statusdis="status_n" :correct="correct('n')"/>
-    <buttonletter lettterkey="M" @down="$emit('press', 'M');pressx('M');" :statusdis="status_m" :correct="correct('m')"/>
+    <buttonletter lettterkey="Z" @click="$emit('press', 'Z');pressx('Z');" :statusdis="status_z" :correct="correct('z')"/>
+    <buttonletter lettterkey="X" @click="$emit('press', 'X');pressx('X');" :statusdis="status_x" :correct="correct('x')"/>
+    <buttonletter lettterkey="C" @click="$emit('press', 'C');pressx('C');" :statusdis="status_c" :correct="correct('c')"/>
+    <buttonletter lettterkey="V" @click="$emit('press', 'V');pressx('V');" :statusdis="status_v" :correct="correct('v')"/>
+    <buttonletter lettterkey="B" @click="$emit('press', 'B');pressx('B');" :statusdis="status_b" :correct="correct('b')"/>
+    <buttonletter lettterkey="N" @click="$emit('press', 'N');pressx('N');" :statusdis="status_n" :correct="correct('n')"/>
+    <buttonletter lettterkey="M" @click="$emit('press', 'M');pressx('M');" :statusdis="status_m" :correct="correct('m')"/>
+
   </div>
-  <button @click="logx()"> dasdasdasd</button>
 </template>
 
 <style scoped></style>
