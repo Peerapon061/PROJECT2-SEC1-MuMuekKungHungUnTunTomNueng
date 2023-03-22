@@ -1,6 +1,6 @@
 <script setup>
             import {computed} from 'vue'
-            import '../assets/style.css'
+            import '../../assets/style.css'
 
             const props = defineProps({
               status: { type:String,  default: ''} ,

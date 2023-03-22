@@ -1,13 +1,17 @@
 {
-  "name": "new",
+  "name": "project2-sec1-mumuekkunghunguntuntomnueng",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "backend": "json-server --watch ./src/data/db.json --port 5000",
+    "server":"concurrently \"npm run backend\" \"npm run dev\""
   },
   "dependencies": {
+    "daisyui": "^2.51.4",
+    "json-server": "^0.17.2",
     "vue": "^3.2.47"
   },
   "devDependencies": {
