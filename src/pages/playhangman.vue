@@ -2,6 +2,7 @@
 import {onMounted,ref} from 'vue';
 import { getCategories } from '../composable/getCategories';
 import game from '../components/HANGMANGAME/hangman.vue'
+import bt from '../components/button.vue'
 const cataForGame=ref([])
 const SelectedCata=ref([{word:"cat",meaning:"เเมว"},
     {word:"pooh",meaning:"ภู"},
@@ -33,11 +34,12 @@ function changdone() {
     <div class="popup-container" v-show="open==1">
         <game  @ending="closegame()" :question="SelectedCata" :change="changgame" @chang="changdone()"/>
     </div> 
-  <div class="flex justify-center items-center">
+  <div class="grid justify-center items-center mt-52">
+    <h2>chose category :</h2>
     <select v-model="SelectedCata" name="categories" id="categories">
         <option v-for="(cata,index) in cataForGame" :key='cata.id' class="text-black" :value="cata.vocabs">{{ cata.CategoryName }}</option>
     </select>
-    <button @click="opengame()">PLAY</button> 
+    <bt @click="opengame()" word="PLAY" class="ml-4"/>
      </div> 
   </div>
     <div class="w-full h-1/5 bg-WoodFloor"><div class="w-full h-full bg-gradient-to-b from-black  to-black/50"></div> </div>

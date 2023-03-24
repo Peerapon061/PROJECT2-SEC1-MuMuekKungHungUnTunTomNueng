@@ -52,6 +52,7 @@ const status = computed(()=>
 const reset = () => {
     guessedLetters.value =[]
     count.value=0
+    mygamelist.value=mygame.value.createdgame()
     word.value = allWord.value[mygamelist.value[0]].word
     resetkb.value++
     endgame.value=0
