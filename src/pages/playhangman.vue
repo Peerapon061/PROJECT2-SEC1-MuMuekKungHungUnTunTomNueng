@@ -13,7 +13,7 @@ const SelectedCata=ref([{word:"cat",meaning:"เเมว"},
 onMounted(async()=>{
     cataForGame.value=await getCategories()
 })
-let open=ref(1)
+let open=ref(0)
 function closegame() {
     open.value=0
 }
