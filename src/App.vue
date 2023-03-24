@@ -9,7 +9,6 @@ import play from './pages/playhangman.vue'
 <div class="w-screen h-screen "> 
     <!-- <startGame/>   -->
     <!-- <SelectCategories/>   -->
-  
    <play/> 
 </div>
 </template>
