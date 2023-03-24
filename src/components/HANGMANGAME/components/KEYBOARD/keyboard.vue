@@ -45,7 +45,8 @@ const ROW3=['Z','X','C','V','B','N','M']
 </script>
 
 <template>
-  <div class="flex">
+  <div class="grid justify-center items-center mt-5">
+    <div class="flex">
     <h1 class="hidden">{{ statusbutton }}</h1>
     <div v-for=" item in ROW1">
          <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item);" :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
@@ -60,6 +61,7 @@ const ROW3=['Z','X','C','V','B','N','M']
     <div v-for=" item in ROW3">
          <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item);" :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
     </div>
+  </div>
   </div>
 </template>
 

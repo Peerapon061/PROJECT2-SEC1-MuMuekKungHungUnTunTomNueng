@@ -13,35 +13,35 @@
           "meaning": "เขียน"
         },
         {
-          "word": "Learn",
+          "word": "learn",
           "meaning": "เรียน"
         },
         {
-          "word": "Eat",
+          "word": "eat",
           "meaning": "กิน"
         },
         {
-          "word": "Drink",
+          "word": "drink",
           "meaning": "ดื่ม"
         },
         {
-          "word": "Teach",
+          "word": "teach",
           "meaning": "สอน"
         },
         {
-          "word": "Watch",
+          "word": "watch",
           "meaning": "ดู"
         },
         {
-          "word": "Like",
+          "word": "like",
           "meaning": "ชอบ "
         },
         {
-          "word": "See",
+          "word": "see",
           "meaning": "เห็น "
         },
         {
-          "word": "Need",
+          "word": "need",
           "meaning": "ต้องการ"
         }
       ]
@@ -120,9 +120,8 @@
       "vocabs": [
         {
           "word": "www",
-          "meaning": [
+          "meaning": 
             "eeee"
-          ]
         }
       ]
     }

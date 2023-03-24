@@ -2,7 +2,6 @@
 const props = defineProps({
   wrongcount: { type: Number, default: 0 },
 });
-console.log(props.wrongcount);
 </script>
  
 <template>

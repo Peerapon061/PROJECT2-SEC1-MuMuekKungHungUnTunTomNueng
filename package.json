@@ -7,12 +7,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "backend": "json-server --watch ./src/data/db.json --port 5000",
-    "server":"concurrently \"npm run backend\" \"npm run dev\""
+    "server": "concurrently \"npm run backend\" \"npm run dev\""
   },
   "dependencies": {
     "daisyui": "^2.51.4",
     "json-server": "^0.17.2",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
