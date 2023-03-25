@@ -8,7 +8,6 @@ import Word from "./components/Word.vue";
 import Pop from "./components/Popup.vue";
 import keyboard from "./components/KEYBOARD/keyboard.vue"
 import hint from "./components/hint.vue"
-import bt from '../../components/button.vue'
 const props = defineProps({
      question: { type:Array,  default:[]} ,
      change: { type:Boolean,  default:false} 
@@ -91,7 +90,7 @@ const initGame=()=>{
 
 <template>
     <p class="hidden">{{ initGame() }}</p>
-    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2">Close</button>
+    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:cursor-pointer transition duration-150  active:scale-90">Close</button>
     <div class="-mt-11">
         <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>

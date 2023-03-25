@@ -28,11 +28,13 @@ const emit=defineEmits(['next','reset','menu'])
 
 </div>
 <div v-if="finalMessage && props.endgame==1">
-  <div class ="popup-container2 flex justify-center" id="popup-container">
-    <p>asdasd</p>
-    <div class="popup">
-    <button  @click="$emit('menu')" >Choose Category</button>
-  </div>
+  <div class ="popup-container2" id="popup-container">
+    <div class="grid justify-center items-center">
+      <h1 class="text-8xl mt-52 text-emerald-300">Game Clear</h1>
+      <button class="rounded-2xl hover:cursor-pointer transition duration-150  active:scale-90 bg-white text-sky-300 py-3 px-3 mt-6" @click="$emit('menu')">Choose Category</button>
+    </div>
+    
+    
   </div>
 </div>
 
@@ -60,7 +62,7 @@ const emit=defineEmits(['next','reset','menu'])
 }
 
 .popup-container2 {
-  background-color: rgba(255, 238, 0, 0.3);
+  background-color: linear-gradient(to right, rgb(254, 249, 195), rgb(253, 224, 71), rgb(234, 179, 8));
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
