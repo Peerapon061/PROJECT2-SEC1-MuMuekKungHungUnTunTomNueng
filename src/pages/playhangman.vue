@@ -7,12 +7,9 @@ const cataForGame=ref([])
 const SelectedCata=ref([{word:"cat",meaning:"เเมว"},
     {word:"pooh",meaning:"ภู"},
     {word:"university",meaning:"มหาลัย"}])
-
-
-
-
 onMounted(async()=>{
     cataForGame.value=await getCategories()
+    
 })
 let open=ref(0)
 function closegame() {
@@ -26,15 +23,16 @@ let changgame=ref(false)
 function changdone() {
     changgame.value=false
 }
+
 </script>
  
 <template>
 <div class="w-screen  h-screen bg-gradient-to-b from-amber-900  to-black ">
-  <div class="flex flex-col m-auto relative top-10  border-4 border-zinc-800 drop-shadow-lg   w-4/5 h-4/5 bg-orange-300 bg-cover"> 
+  <div class="  m-auto relative top-10  border-4 border-zinc-800 drop-shadow-lg   w-4/5 h-4/5 bg-orange-300 bg-cover"> 
     <div class="popup-container w-5/5 h-5/5" v-show="open==1">
         <game  @ending="closegame()" :question="SelectedCata" :change="changgame" @chang="changdone()"/>
     </div> 
-  <div class="grid justify-center items-center mt-52">
+  <div class="grid justify-center items-center mt-52" v-show="!open==1">
     <h2>chose category :</h2>
     <select v-model="SelectedCata" name="categories" id="categories">
         <option v-for="(cata,index) in cataForGame" :key='cata.id' class="text-black" :value="cata.vocabs">{{ cata.CategoryName }}</option>

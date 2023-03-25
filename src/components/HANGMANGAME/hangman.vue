@@ -91,19 +91,22 @@ const initGame=()=>{
 
 <template>
     <p class="hidden">{{ initGame() }}</p>
-    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg my-2 mx-2 px-1 py-1">Close</button>
-    <div class="h-full w-full">
+    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2">Close</button>
+    <div class="-mt-11">
         <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
         <div class="grid justify-center items-center">
         <Figure :wrongcount="wrongLetters.length"/>
-        <div class="flex justify-center items-center">
-        <Word :letters="letters" :correct-letters="correctLetters" />
         </div>
-    </div>
-    <keyboard  @press="clickKd($event)" :wordques="word" :statuscode="resetkb"  />                     
+        <div class="flex justify-center items-center" :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']">
+        <Word :letters="letters" :correct-letters="correctLetters"  />
+        </div>
+        <div :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']">
+        <keyboard  @press="clickKd($event)" :wordques="word" :statuscode="resetkb"  />      
+    </div>               
     <Pop :status="status " :word="word" @reset ="reset()" @next="next()" :endgame="endgame" @menu="closegame()"/>
     </div>
+    
     
     
 </template>

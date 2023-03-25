@@ -68,12 +68,12 @@ const countDie = (num) => {
 <style scoped>
 .figure-container {
   fill: transparent;
-  stroke: #f81515;
+  stroke: #f8b600;
   stroke-width: 4px;
   stroke-linecap: round;
 }
 
 .figure-part {
-  stroke: black;
+  stroke: rgb(255, 255, 255);
 }
 </style>

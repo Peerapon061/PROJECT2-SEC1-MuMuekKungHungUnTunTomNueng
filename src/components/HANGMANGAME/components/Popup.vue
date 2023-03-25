@@ -23,7 +23,7 @@ const emit=defineEmits(['next','reset','menu'])
         <button  @click="$emit('reset')" :class="status=='win'?'hidden':''">Play agian </button>
         <button  @click="$emit('menu')" :class="status=='win'?'hidden':''">Choose Category</button>
       </div>
-        <button  @click="$emit('next')" :class="status=='win'?'':'hidden'" class="ml-24">Next Question </button>
+        <button  @click="$emit('next')" :class="status=='win'?'':'hidden'" class="grid items-center">Next Question </button>
     </div>
 
 </div>
