@@ -31,7 +31,7 @@ function changdone() {
 <template>
 <div class="w-full  h-full bg-gradient-to-b from-amber-900  to-black ">
   <div class="flex flex-col m-auto relative top-10  border-4 border-zinc-800 drop-shadow-lg   w-4/5 h-4/5 bg-orange-300 bg-cover"> 
-    <div class="popup-container" v-show="open==1">
+    <div class="popup-container w-5/5 h-5/5" v-show="open==1">
         <game  @ending="closegame()" :question="SelectedCata" :change="changgame" @chang="changdone()"/>
     </div> 
   <div class="grid justify-center items-center mt-52">

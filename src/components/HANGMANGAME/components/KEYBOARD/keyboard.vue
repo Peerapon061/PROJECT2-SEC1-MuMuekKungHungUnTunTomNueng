@@ -45,7 +45,7 @@ const ROW3=['Z','X','C','V','B','N','M']
 </script>
 
 <template>
-  <div class="grid justify-center items-center mt-5">
+  <div class="grid justify-center items-center mt-2 ">
     <div class="flex">
     <h1 class="hidden">{{ statusbutton }}</h1>
     <div v-for=" item in ROW1">

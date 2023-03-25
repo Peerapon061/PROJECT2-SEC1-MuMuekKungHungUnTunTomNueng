@@ -91,8 +91,8 @@ const initGame=()=>{
 
 <template>
     <p class="hidden">{{ initGame() }}</p>
-    <div>
-        <Header  class="mb-10" :wrongcount="wrongLetters.length"/>
+    <div class="">
+        <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
         <div class=" grid justify-center items-center">
         <div class="flex justify-center items-center">
@@ -103,7 +103,7 @@ const initGame=()=>{
         </div>
     </div>
     </div>
-    <div>
+    <div class="">
     <keyboard  @press="clickKd($event)" :wordques="word" :statuscode="resetkb"  />                     
     <Pop :status="status " :word="word" @reset ="reset()" @next="next()" :endgame="endgame" @menu="closegame()"/>
     </div>

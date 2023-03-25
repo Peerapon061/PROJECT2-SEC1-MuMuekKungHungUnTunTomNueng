@@ -5,8 +5,8 @@ const props = defineProps({
 </script>
  
 <template>
-<div class ="flex space-x-5 mt-10 ">
-    <div class="w-16 h-16  rounded-2xl  items-center flex justify-center text-5xl text-white " v-for="(word,index) in letters" :key="index" :class="correctLetters.includes(word) ? 'bg-orange-400':'bg-green-200'" >
+<div class ="flex space-x-5 mt-5 mb-3  ">
+    <div class="w-10 h-10  rounded-2xl  items-center flex justify-center text-2xl  text-white " v-for="(word,index) in letters" :key="index" :class="correctLetters.includes(word) ? 'bg-orange-400':'bg-green-200'" >
     {{ correctLetters.includes(word) ? word :' ' }}
     </div>
   
