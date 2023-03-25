@@ -5,7 +5,7 @@ const props = defineProps({ lettterkey: {type:String,  default: ''}, statusdis: 
 <template>
   <div>
     <button
-      class="rounded-2xl shadow-sm shadow-black bg-gray-300 text-xl px-3 py-3 hover:cursor-pointer h-12 w-14  mx-3 active:scale-90 disabled:cursor-default disabled:scale-90"
+      class="rounded-2xl shadow-sm shadow-black bg-gray-300 text-2xl px-3 py-3 hover:cursor-pointer h-12 w-14  mx-3 active:scale-90 disabled:cursor-default disabled:scale-90"
     :disabled="props.statusdis==0? false:true"  
     :class="[props.correct==1? 'disabled:bg-red-500':'',props.correct==2?'disabled:bg-green-500':'']"
     >
