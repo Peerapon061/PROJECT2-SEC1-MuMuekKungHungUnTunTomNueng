@@ -8,7 +8,7 @@ import Word from "./components/Word.vue";
 import Pop from "./components/Popup.vue";
 import keyboard from "./components/KEYBOARD/keyboard.vue"
 import hint from "./components/hint.vue"
-
+import bt from '../../components/button.vue'
 const props = defineProps({
      question: { type:Array,  default:[]} ,
      change: { type:Boolean,  default:false} 
@@ -91,22 +91,20 @@ const initGame=()=>{
 
 <template>
     <p class="hidden">{{ initGame() }}</p>
-    <div class="">
+    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg my-2 mx-2 px-1 py-1">Close</button>
+    <div class="h-full w-full">
         <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
-        <div class=" grid justify-center items-center">
-        <div class="flex justify-center items-center">
+        <div class="grid justify-center items-center">
         <Figure :wrongcount="wrongLetters.length"/>
-    </div>
         <div class="flex justify-center items-center">
         <Word :letters="letters" :correct-letters="correctLetters" />
         </div>
     </div>
-    </div>
-    <div class="">
     <keyboard  @press="clickKd($event)" :wordques="word" :statuscode="resetkb"  />                     
     <Pop :status="status " :word="word" @reset ="reset()" @next="next()" :endgame="endgame" @menu="closegame()"/>
     </div>
+    
     
 </template>
 
