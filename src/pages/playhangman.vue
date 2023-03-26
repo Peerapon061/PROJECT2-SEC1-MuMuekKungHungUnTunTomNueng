@@ -33,9 +33,10 @@ function changdone() {
     </div> 
   <div class="grid justify-center items-center mt-60" v-show="!open==1">
     <div class="flex ">
-    <h2 class="mr-3 ">chose category :</h2>
-    <select v-model="SelectedCata" name="categories" id="categories" class="rounded-xl">
-        <option v-for="(cata,index) in cataForGame" :key='cata.id' class="text-black" :value="cata.vocabs">{{ cata.CategoryName }}</option>
+    <h2 class="mr-3 cursor-default">chose category :</h2>
+    <select v-model="SelectedCata" name="categories" id="categories" class="rounded-xl hover:cursor-pointer">
+        <option disabled selected>Chose category</option>
+        <option v-for="(cata,index) in cataForGame" :key='cata.id' class="text-black" :value="cata.vocabs" >{{ cata.CategoryName }}</option>
     </select>
 </div>
 <button class="rounded-2xl hover:cursor-pointer transition duration-150  active:scale-90 bg-white text-sky-300 py-3 px-3 mt-6" @click="opengame()">Play</button>

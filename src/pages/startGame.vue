@@ -1,5 +1,5 @@
 <script setup>
-
+import { RouterLink } from 'vue-router';
 </script>
  
 <template>
@@ -25,11 +25,15 @@
         <span class="bg-black/50 rounded-lg px-2 ">H</span>ang Man  
       </h1> 
      </div>
-     <div class="w-full h-2/6 relative text-3xl font-LilitaOne space-y-10 flex flex-col    p-5"> 
+      <RouterLink to="/playgame" class="w-full h-2/6 relative text-3xl font-LilitaOne space-y-10 flex flex-col    p-5">
       <button class="btn btn-active w-2/6 h-2/5 mx-auto   border-4 text-3xl bg-yellow-400 text-black font-bold"> START </button>
+      </RouterLink>
+      <RouterLink to="/categories" class="w-full h-2/6 relative text-3xl font-LilitaOne space-y-10 flex flex-col    p-5">
+      <button class="btn btn-active w-2/6 h-2/5 mx-auto   border-4 text-3xl bg-yellow-400 text-black font-bold"> Manage </button>
+      </RouterLink>
+      <RouterLink to="/howtoplay" class="w-full h-2/6 relative text-3xl font-LilitaOne space-y-10 flex flex-col    p-5">
       <button class="btn btn-active w-2/6 h-2/5 mx-auto   border-4 text-3xl bg-yellow-400 text-black font-bold"> HOW TO PLAY </button>
-    </div>
-        
+       </RouterLink>
   </div>
 
     <div class="w-full h-1/5 bg-WoodFloor"><div class="w-full h-full bg-gradient-to-b from-black  to-black/50"></div> </div>

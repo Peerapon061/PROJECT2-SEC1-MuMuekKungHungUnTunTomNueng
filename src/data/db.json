@@ -91,39 +91,6 @@
           "meaning": "เป็ด"
         }
       ]
-    },
-    {
-      "id": 3,
-      "CategoryName": "fesfe",
-      "vocabs": [
-        {
-          "word": "fes",
-          "meaning": [
-            "eeeee"
-          ]
-        },
-        {
-          "word": "esf",
-          "meaning": [
-            [
-              "f",
-              "f",
-              "f"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "CategoryName": "www",
-      "vocabs": [
-        {
-          "word": "www",
-          "meaning": 
-            "eeee"
-        }
-      ]
     }
   ]
 }
