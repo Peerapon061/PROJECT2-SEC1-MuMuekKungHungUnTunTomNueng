@@ -16,7 +16,9 @@ module.exports = {
       },
       fontFamily: {
         'RampartOne': ['Rampart One', 'cursive'],
-        'LilitaOne':['Zen Antique Soft', 'serif']
+        'LilitaOne':['Zen Antique Soft', 'serif'],
+        'Comfortaa':['Comfortaa', 'cursive'],
+        'alfra':[ 'Alfa Slab One', 'cursive']
       },
     },
   },

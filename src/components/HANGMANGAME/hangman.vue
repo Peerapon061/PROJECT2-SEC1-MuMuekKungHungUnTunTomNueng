@@ -28,7 +28,6 @@ const word = ref(allWord.value[mygamelist.value[0]].word);
 //  const meanings = ref(getMeaning());
 const guessedLetters = ref([]);
 const letters = computed(() => word.value.split(""));
-
 const wrongLetters = computed(() =>
     guessedLetters.value
         .filter((l) => !letters.value.includes(l))
@@ -105,9 +104,6 @@ const initGame=()=>{
     </div>               
     <Pop :status="status " :word="word" @reset ="reset()" @next="next()" :endgame="endgame" @menu="closegame()"/>
     </div>
-    
-    
-    
 </template>
 
 <style scoped>
