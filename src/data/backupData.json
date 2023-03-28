@@ -1,38 +1,73 @@
 {
-    "Categoties": [
-      {"id":1,
-        "CategoryName":"verb",
-      "vocabs":[{ "word":"read","meaning":"อ่าน"},
-    
-      {"word":"write","meaning":"เขียน"},
-      {"word":"Learn","meaning":"เรียน"},
-      {"word":"Eat","meaning":"กิน"},
-      {"word":"Drink","meaning":"ดื่ม"},
-      {"word":"Teach","meaning": "สอน"},
-      {"word":"Watch","meaning":"ดู"},
-      {"word":"Like","meaning":"ชอบ "},
-      {"word":"See","meaning":"เห็น "},
-      {"word":"Need","meaning":"ต้องการ"}
-    ]
-      
-    },
-    {"id":2,
-      "CategoryName":"animal",
-    "vocabs":[
-      {"word":"alligator","meaning":"จระเข้"},
-       { "word":"ant","meaning":"มด"},  
-           {"word":"bat","meaning":"ค้างคาว"},  
-           {"word":"bear","meaning":"หมี"},  
-           {"word":"camel","meaning":"อูฐ"},  
-           {"word":"deer","meaning":"กวาง"},  
-           {"word":"dog","meaning":"สุนัข"},  
-           {"word":"donkey","meaning":"ลา"},  
-           {"word":"dragonfly","meaning":"แมลงปอ"},  
-           {"word":"duck","meaning":"เป็ด"}  
-         
-    ]
-  
-    }
-    ]
+  "Categoties": [
+    {"id":1,
+      "CategoryName":"verb",
+    "vocabs":[{ "word":"read","meaning":"อ่าน"},
+    {"word":"write","meaning":"เขียน"},
+    {"word":"Learn","meaning":"เรียน"}
+
+  ] 
+  },
+  {"id":2,
+    "CategoryName":"animal1",
+  "vocabs":[
+    {"word":"alligator","meaning":"จระเข้"},
+     { "word":"ant","meaning":"มด"},  
+         {"word":"bat","meaning":"ค้างคาว"}  
+       
+  ]
+
   }
-  
+  ,
+  {"id":3,
+    "CategoryName":"animal2",
+  "vocabs":[ 
+         {"word":"bear","meaning":"หมี"},  
+         {"word":"camel","meaning":"อูฐ"}  
+  ]
+
+  }
+  ,
+  {"id":4,
+    "CategoryName":"animal3",
+  "vocabs":[
+         {"word":"deer","meaning":"กวาง"},  
+         {"word":"dog","meaning":"สุนัข"},  
+         {"word":"donkey","meaning":"ลา"},  
+         {"word":"dragonfly","meaning":"แมลงปอ"}   
+       
+  ]
+
+  }
+  ,
+  {"id":5,
+    "CategoryName":"animal4",
+  "vocabs":[  
+         {"word":"duck","meaning":"เป็ด"}  
+       
+  ]
+
+  }
+  ,
+  {"id":6,
+    "CategoryName":"verb2",
+  "vocabs":[
+    {"word":"Like","meaning":"ชอบ "},
+    {"word":"See","meaning":"เห็น "},
+    {"word":"Need","meaning":"ต้องการ"}
+       
+  ]
+
+  }
+  ,
+  {"id":7,
+    "CategoryName":"verb3",
+  "vocabs":[
+    {"word":"Eat","meaning":"กิน"},
+    {"word":"Drink","meaning":"ดื่ม"},
+    {"word":"Teach","meaning": "สอน"},
+    {"word":"Watch","meaning":"ดู"}  
+  ]
+  }
+  ]
+}

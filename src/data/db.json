@@ -43,7 +43,8 @@
   {"id":5,
     "CategoryName":"animal4",
   "vocabs":[  
-         {"word":"duck","meaning":"เป็ด"}  
+         {"word":"duck","meaning":"เป็ด"},
+         {"word":"camel","meaning":"อูฐ"}   
        
   ]
 
@@ -52,9 +53,9 @@
   {"id":6,
     "CategoryName":"verb2",
   "vocabs":[
-    {"word":"Like","meaning":"ชอบ "},
-    {"word":"See","meaning":"เห็น "},
-    {"word":"Need","meaning":"ต้องการ"}
+    {"word":"like","meaning":"ชอบ "},
+    {"word":"see","meaning":"เห็น "},
+    {"word":"need","meaning":"ต้องการ"}
        
   ]
 
@@ -63,10 +64,10 @@
   {"id":7,
     "CategoryName":"verb3",
   "vocabs":[
-    {"word":"Eat","meaning":"กิน"},
-    {"word":"Drink","meaning":"ดื่ม"},
-    {"word":"Teach","meaning": "สอน"},
-    {"word":"Watch","meaning":"ดู"}  
+    {"word":"eat","meaning":"กิน"},
+    {"word":"drink","meaning":"ดื่ม"},
+    {"word":"teach","meaning": "สอน"},
+    {"word":"watch","meaning":"ดู"}  
   ]
   }
   ]

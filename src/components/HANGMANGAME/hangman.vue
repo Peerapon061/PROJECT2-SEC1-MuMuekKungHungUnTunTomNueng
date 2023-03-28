@@ -60,7 +60,8 @@ const next = () => {
         guessedLetters.value =[]
     word.value = allWord.value[mygamelist.value[++count.value]].word
     resetkb.value++
-    }else if(count.value<mygamelist.value.length-1){
+    }
+    else if(count.value<mygamelist.value.length-1){
     guessedLetters.value =[]
     word.value = allWord.value[mygamelist.value[++count.value]].word
     resetkb.value++

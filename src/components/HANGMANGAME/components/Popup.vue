@@ -6,7 +6,7 @@
                  word:{type:String, default :''} ,
                  endgame:{type:Number,default:1} }) 
                  const finalMessage = computed(()=>{    
-                        if(props.status ==='win') return 'YON WIN! '
+                        if(props.status ==='win') return 'YON WIN!'
                         if(props.status ==='lost') return 'NICE TRY'
                         else 
                         { return ''}
@@ -15,9 +15,9 @@ const emit=defineEmits(['next','reset','menu'])
 </script> 
 
 <template>
-<div    v-if="finalMessage && props.endgame==0" class="popup-container flex justify-center font-Comfortaa" id="popup-container" >
+<div    v-if="(finalMessage && props.endgame==0)||(finalMessage=='NICE TRY' && props.endgame==1)" class="popup-container flex justify-center font-Comfortaa" id="popup-container" >
     <div class ="popup  text-5xl">
-        <h3 :class="status === 'win' ? 'text-green-600' : 'text-red-700 ' " class="text-center">{{ finalMessage}}</h3>
+        <h3 :class="status === 'win' ? 'text-green-600' : 'text-red-700 ' " class="text-center mb-4">{{ finalMessage}}</h3>
         <h2>ANSWER IS <span class="text-cyan-200  ">{{ word.toLocaleUpperCase() }}</span></h2>       
        <div class="grid  items-center">
         <button  @click="$emit('reset')" :class="status=='win'?'hidden':''">Play agian </button>
@@ -28,7 +28,7 @@ const emit=defineEmits(['next','reset','menu'])
     </div>
 
 </div>
-<div v-if="finalMessage && props.endgame==1">
+<div v-if="finalMessage=='YON WIN!' && props.endgame==1">
   <div class ="popup-container2 bg-gradient-to-r from-rose-400 to-orange-300 font-alfra" id="popup-container">
     <div class="grid justify-center items-center">
       <h1 class="text-8xl mt-52 text-yellow-300 waviy">Game Clear</h1>

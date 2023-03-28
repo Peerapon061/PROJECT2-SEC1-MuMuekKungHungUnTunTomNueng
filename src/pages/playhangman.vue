@@ -29,7 +29,13 @@ function getCategory(cateid) {
    SelectedCata.value=game.vocabs
    setTimeout(() => {
   opengame()
-}, 600);
+}, 200);
+}
+function randomquiz(){
+  let x=Math.floor(Math.random() * (cataForGame.value.length - 1 + 1) + 1)
+  console.log(x);
+  console.log(cataForGame.value.length);
+  getCategory(x)
 }
 const searchKeyword = ref("");
 const filterSearch = computed(() => {
@@ -48,11 +54,13 @@ const filterSearch = computed(() => {
     </div> 
   <div class=" " v-show="!open==1">
     <h1 class="flex justify-center items-center mt-10  text-5xl">Choose category </h1>
-    <div class="flex justify-center items-center w-full h-12 mt-5 bg-white">Choose category for play Hangman</div>  
-    <div class="flex justify-center items-center w-full h-12 mt-5 "><input type="text" placeholder=" Search.." class="rounded-xl h-10 w-full bg-gradient-to-r from-slate-500 to-yellow-100 mx-64 pl-10" v-model.trim="searchKeyword"></div>  
+    <div class="flex justify-center items-center w-full h-12 mt-5 bg-white">Click on a category to play hangman</div>  
+    <div class="flex justify-center items-center w-full h-12 mt-5 "><input type="text" placeholder=" Search.." class="rounded-xl h-10 w-full bg-gray-200 mx-64 pl-10" v-model.trim="searchKeyword"></div>  
 <div class=" flex overflow-x-auto  w-auto items-center mt-4 pb-20">
+  <button class=" w-60 h-60  mx-2 my-2 rounded-2xl text-3xl shadow-black/40  text-white flex btn btn-active   bg-yellow-700 font-bold" @click="randomquiz()">Random</button>
 <div v-for="(cata,index) in filterSearch" class="">
-<button class=" w-60 h-60  mx-2 my-2 rounded-2xl hover:cursor-pointer   active:scale-90 bg-gradient-to-r from-yellow-100 via-green-200 to-green-300 text-3xl  transition duration-300 cursor-pointer shadow-xl shadow-black" @click="getCategory(cata.id)">{{ cata.CategoryName }}</button>
+<button class=" w-60 h-60  mx-2 my-2 rounded-2xl text-3xl shadow-black/40  text-black flex btn btn-active   bg-orange-200 font-bold" @click="getCategory(cata.id)">{{ cata.CategoryName }}</button>
+<!-- w-60 h-60  mx-2 my-2    mt-20 flex btn btn-active  text-3xl bg-orange-400 font-bold -->
 </div>
 <div class="bg-white"></div>
 </div>
