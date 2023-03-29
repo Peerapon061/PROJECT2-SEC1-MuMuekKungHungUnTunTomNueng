@@ -1,11 +1,13 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+import Iconsong from '../components/song/Iconsong.vue';
 </script>
  
 <template>
 
     <div class="w-full  h-full bg-gradient-to-b from-amber-900  to-black ">
-  <div class="flex flex-col m-auto relative top-10  border-4 border-zinc-800 drop-shadow-lg   w-4/5 h-4/5 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 bg-cover"> 
+      <div class="flex w-full h-20 justify-end p-5"> <Iconsong  class=" flex justify-end h-14 "/>  </div>
+  <div class="flex flex-col m-auto relative  border-4  border-amber-900 drop-shadow-lg   w-4/5 h-4/5 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 bg-cover"> 
     <div class="w-full h-1/6 flex  pr-6  justify-end"> 
       
 

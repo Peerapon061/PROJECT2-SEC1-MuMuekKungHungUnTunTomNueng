@@ -113,10 +113,10 @@ const DeleteVocabfunction = (event) =>
 </script>
  
 <template>
-<div>
-<table class="table table-zebra w-11/12  mx-auto  text-white ">
+<div class="font-Comfortaa">
+<table class="table table-zebra w-11/12   mx-auto text-lg dark:text-white ">
             <!-- head -->
-            <thead class="">
+            <thead >
               <tr>
                 <th>No.</th>
                 <th>Vocabs</th>
@@ -125,10 +125,10 @@ const DeleteVocabfunction = (event) =>
               
               </tr>
             </thead>
-            <tbody >
+            <tbody  >
              
               <!-- row 1 -->
-              <tr v-for=" (vocab,index) in  EditObjectShowPage" :key="index"  >
+              <tr  v-for=" (vocab,index) in  EditObjectShowPage" :key="index"  >
              
                 <th> {{    (((props.countPages-1)*4)+index)+1 }}  </th> 
                 <td ><input  v-if="vocab.status" type="text" v-model="vocab.word">  <span v-else > {{ vocab.word }}   </span> </td>

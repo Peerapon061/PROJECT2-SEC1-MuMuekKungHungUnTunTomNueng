@@ -34,7 +34,6 @@ const showPagination =(direction)=>{
  emits('returnPage',countPageRef.value)
 
 }
-console.log(props.countPage);
 </script>
  
 <template>

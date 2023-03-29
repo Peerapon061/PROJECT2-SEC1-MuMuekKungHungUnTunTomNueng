@@ -26,7 +26,7 @@ const props = defineProps({
 </script>
  
 <template>
-       <div class="card w-4/5 bg-amber-900 m-auto text-primary-content "  :class="EditCategory&&checknumber===index?'bg-black/70':'bg-amber-900'">
+       <div class="card w-4/5 bg-zinc-700 border-2 border-amber-900 m-auto text-primary-content "  :class="EditCategory&&checknumber===index?'bg-black/70':'bg-amber-900'">
               
               <div class="card-body">
                  <h2 class="card-title">{{ props.Category.CategoryName }}</h2>
