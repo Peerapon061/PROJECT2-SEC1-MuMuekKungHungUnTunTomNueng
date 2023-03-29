@@ -19,4 +19,4 @@ const getCategories = async () => {
   
   
   }
-  export {getCategories}
+export {getCategories}

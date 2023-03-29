@@ -19,24 +19,45 @@ onBeforeMount(async ()=>{
       CategoryAll.value.push({id:x.id,CategoryName:x.CategoryName,vocabs:Vocabs})
       Vocabs = []
   })
+  checkid()
 })
-const TemporaryName = ref()
+const TemporaryName = ref("")
 const TemporaryGroupVocabs =ref([]) 
 const CategoryAll = ref([])
 const TemporaryVocab=ref({word:'',meaning:''}) // สำหรับ ตอน add 
 const EditCategory = ref(false) //
+const alert = ref(false)
+const alert_complete = ref(false)
+const alert_error = ref(false)
+const msg_error=ref("")
+const msg_complete=ref("")
+const job=ref("")
 let countPage = ref(1) //หน้า ที่ Show pagination
 let countId = 2 // id ตอนเพิ่ม categories
+
+const checkid=()=>{
+  let x=CategoryAll.value.length
+  countId=x+1
+}
+const checkvocab=()=>{
+  let y=TemporaryName.value.length<15 && TemporaryGroupVocabs.value.length>1 && TemporaryGroupVocabs.value.length>1
+    return y
+}
+const closealert=()=>{
+     alert.value=false
+      alert_error.value=false
+      msg_error.value=""
+      job.value=""
+}
+
 //เช็คว่ากดของปุ่มไหน
 let checknumber=ref()
 const page = ref({add:true, show:false})
 // const TemporaryShow = computed(()=>{
 //           return pagination(TempObjTarget,changPage)
-console.log(CategoryAll.value);
 // })
 const idCategory =ref(1)
 let TempObjTarget =computed(()=>{  
-   console.log(TempObjTarget.value);
   return CategoryAll.value.find(x=>x.id == idCategory.value)
   }) //category ทั้งหมด
 
@@ -61,7 +82,7 @@ const addVocab = () => {
         TemporaryVocabtest =TemporaryVocabtest.replace(/\s/gi,",")
        }
   
-      TemporaryGroupVocabs.value.push(new myword(TemporaryVocab.value.word,TemporaryVocabtest ))
+      TemporaryGroupVocabs.value.push(new myword(TemporaryVocab.value.word.toLocaleLowerCase(),TemporaryVocabtest ))
       
   
         TemporaryVocab.value={word:'',meaning:''}
@@ -102,12 +123,6 @@ const returnPage = (page) =>{
 const  changPage=(event,value,i)=>{
      if(value==='show'){
       idCategory.value = event.target.id
-      console.log(CategoryAll.value);
-      console.log(idCategory.value);
-      
-      console.log(TempObjTarget.value);
-      console.log(TempObjTarget.value.CategoryName);
-      console.log(TempObjTarget.value.vocabs);
       page.value['show']=true
         page.value['add']=false
      }
@@ -130,11 +145,18 @@ const deleteCategory =async (event)=>{
     if (res.ok) {
       CategoryAll.value = CategoryAll.value.filter((category) => {
         return category.id != event.target.id;
-      }
-      );
+      } )
+        alert.value=true
+        alert_complete.value=true
+        msg_complete.value="Delete"
+        setTimeout(() => {
+        alert.value=false
+        alert_complete.value=false
+        msg_complete.value=""
+        }, "2300")
     } else throw new error("Error, cannot delete data!");
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
   EditCategoryfunc()
   if (page.value['show']) {
@@ -157,15 +179,31 @@ const AddCategory =async (event)=>{
     if (res.ok) {
       CategoryAll.value.push({id:countId,CategoryName:TemporaryName.value,vocabs:TemporaryGroupVocabs.value})
       TemporaryGroupVocabs.value=[]
-      TemporaryName.value =[]
-
-    } else throw new error("Error, cannot delete data!");
+      TemporaryName.value =""
+      alert.value=true
+      alert_complete.value=true
+      msg_complete.value="Create"
+      setTimeout(() => {
+      alert.value=false
+      alert_complete.value=false
+      msg_complete.value=""
+      }, "2300")
+    } else {
+      throw new error("Error, cannot delete data!");}
   } catch (error) {
-    console.log(error);
+      TemporaryName.value =""
+      alert.value=true
+      alert_error.value=true
+      job.value="create"
+      msg_error.value="Server Error"
   }
     }
     else {
-      alert('Can not creat Category')
+      TemporaryName.value =""
+      alert.value=true
+      alert_error.value=true
+      job.value="create"
+      msg_error.value="Need manyword or this category name already exists"
     }
   
   }
@@ -175,21 +213,19 @@ const StatusEditcata=ref(false)
 const newcategoryName=ref("")
 const toggleEditNameCategory=()=>{
   newcategoryName.value = TempObjTarget.value?.CategoryName
-  console.log(newcategoryName.value);
+
   StatusEditcata.value = !StatusEditcata.value
 }
 const EditCategoryName=(option)=>{
   if(option==='edit'){
  
       if(newcategoryName.value.trim().length>0){
-        console.log(newcategoryName.value);
         TempObjTarget.value.CategoryName=newcategoryName.value
         modifyVocabInCategory(TempObjTarget.value)
         toggleEditNameCategory()
       }
       else{
         alert('please, typing Category Name')
-        console.log(newcategoryName.value)
       }
   }
   else{
@@ -241,7 +277,7 @@ try {
             throw new Error('cannot edit!')
         }
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -249,7 +285,7 @@ try {
 </script>
  
 <template>
-  <div class=" w-full h-full mt-0  flex flex-col text-black bg-gradient-to-b from-amber-900  to-black bg-cover  ">
+  <div class=" w-full h-full mt-0  flex flex-col text-black bg-gradient-to-b from-amber-900  to-black bg-cover font-Comfortaa ">
 
     <div class="flex w-full h-24 p-2   pl-10 bg-amber-900 justify-between ">
      <RouterLink to="/" class=" relative    btn btn-active  w-28 h-16  text-3xl bg-orange-400 border-1 font-bold"> <img  class="w-14 h-14 hover:w-16 hover:h-16  " src="../img/left-arrow.png" ></RouterLink> 
@@ -257,8 +293,9 @@ try {
     <Iconsong class=" flex justify-end h-14 "/>
     </div>
 <!-- asdad -->
-
+  
   <div class=" w-full h-full  flex relative  justify-center items-center ">
+
     <div class="w-3/12 h-5/6 mb-20 space-y-5  flex flex-col overflow-auto  pt-4  mx-auto   border-4 rounded-lg border-amber-900 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 relative ">
         <div class="flex flex-col " v-for="(Category,index) in CategoryAll" :key="Category.id">
         <Card 
@@ -275,30 +312,36 @@ try {
         </div>
     </div>
     <!-- หน้าสำหรับ add -->
-    <div class="w-4/6 h-5/6 space-y-5 mb-20 flex flex-col p-4  pt-4  mx-auto   border-4 rounded-lg border-amber-900 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 relative " >
-      <div class="w-full h-full flex flex-col  " v-show="page.add" >
-        <div class="flex w-full h-1/6 space-x-3 justify-center">    
-            <label for="NameCategory">Name</label> 
-            <input v-model="TemporaryName" type="text" placeholder="Type here" class="input  text-white input-bordered w-full max-w-xs" />
+    <div class=" w-4/6 h-5/6 space-y-5 mb-20 flex flex-col p-4  pt-4  mx-auto   border-4 rounded-lg border-amber-900 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 relative " >
+      
+      <div class="w-full h-full flex flex-col  " v-show="page.add && !alert" >
+        <h1 class="text-4xl flex items-center justify-center mb-3">Create catagory </h1>
+        <div class="flex w-full h-1/6 space-x-3 justify-center">  
+          <div class="grid h-12">
+        <h1 class="text-xl">Category Name : </h1> 
+        <label class="text-sm">Between 2-15 characters</label> 
+      </div>  
+            <input v-model="TemporaryName" type="text" placeholder="Type here" class="input  dark:text-white input-bordered w-full max-w-xs" />
         </div>
         <div class="flex space-x-3 w-full  h-1/6 justify-center"> 
-        <label for="NameCategory">Vocabs</label>
         <!-- ปุ่ม หน้า add -->
-        <label for="my-modal" class="btn bg-green-900 w-2/12  " >add vocab</label>
-        <label  class="btn btn-info w-2/12  " @click="AddCategory">add Category</label>
+        
+        <button  class="btn btn-info w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
          </div>
-         <div class="flex flex-col m-auto w-11/12 h-[23rem] rounded-lg overflow-auto bg-white"> 
-                
+         <div class="flex justify-center mb-1">
+         <label for="my-modal" class="btn bg-green-900 w-2/12  " >add vocabulary</label>
+        </div>
+         <div class="flex flex-col m-auto w-11/12 h-[23rem] rounded-lg overflow-auto bg-slate-400"> 
             <div >
 
 <div class="overflow-y-auto h-[23rem] ">
                 <!-- ตาราง หน้า add vocab -->
-  <table class="table w-full    text-white h-9">
+  <table class="table w-full    dark:text-white h-9">
     <!-- head -->
-    <thead class="sticky top-0 bg-black">
+    <thead class="sticky top-0 dark:bg-black dark:text-white">
       <tr>
         <th >No.</th>
-        <th>Vocabs</th>
+        <th>Vocabulary</th>
         <th colspan="3">Hint</th>
         <th >Edit</th>
       
@@ -329,14 +372,14 @@ try {
 <input type="checkbox" id="my-modal" class="modal-toggle" />
 <div class="modal">
   <div class="modal-box flex flex-col space-y-2 border-4 text-black  border-amber-800 bg-amber-200">
-    <h3 class="font-bold text-lg">Your vocab </h3>
+    <h3 class="font-bold text-lg">Your vocabulary </h3>
     <div class="flex w-full h-1/6 space-x-3 justify-center">   
-            <label for="NameCategory">Vocab</label> 
-            <input type="text" v-model="TemporaryVocab.word" placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs" />
+            <label for="NameCategory">vocabulary</label> 
+            <input type="text" v-model="TemporaryVocab.word" placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs bg-slate-600" />
         </div>
         <div class="flex w-full h-1/6 space-x-3 justify-center">   
-            <label for="NameCategory">Meaning</label> 
-            <input type="text"  v-model="TemporaryVocab.meaning"  placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs" />
+            <label for="NameCategory">Hint</label> 
+            <input type="text"  v-model="TemporaryVocab.meaning"  placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs bg-slate-600" />
         </div>
     <div class="modal-action flex">
       <label for="my-modal" class="btn" @click="clear">Close</label>
@@ -359,7 +402,7 @@ try {
             >
             <img src="../img/plus.png" class="w-12 h-12 hover:w-22 hover:h-22" >
             </button>
-            <div class="flex justify-center space-x-9 p-2 bg-amber-100 w-3/5 h-20 mx-auto text-5xl font-LilitaOne  text-zinc-900 rounded-2xl text-center ">    
+            <div class="flex justify-center space-x-9 pt-5 bg-amber-100 w-3/5 h-20 mx-auto text-5xl  text-zinc-900 rounded-2xl text-center ">    
             <span v-show="!StatusEditcata" >
             {{TempObjTarget?.CategoryName}}
            </span>
@@ -380,6 +423,26 @@ try {
     
         <tabpagination :countPages="countPage" :TempObjTargetLength="TempObjTarget"  @returnPage="returnPage" />
         </div>
+
+
+        <div class="popup-container w-full h-full flex items-center justify-center" v-show="alert && alert_complete">
+          <div class="grid items-center justify-center ">  
+            <div class="w-full h-full  flex items-center justify-center"> 
+            <img src="../img/check-mark.png" class="  h-40 w-auto "/>
+           </div>      
+            <h1 class="text-center text-3xl text-slate-50">{{msg_complete}} category complete</h1>
+          </div>
+        </div>
+        <div class="popup-container2 w-full h-full flex items-center justify-center" v-show="alert && alert_error">
+          <div class="grid items-center justify-center ">  
+            <div class="w-full h-full  flex items-center justify-center"> 
+            <img src="../img/error.png" class="  h-40 w-auto "/>
+           </div>      
+            <h1 class="text-center text-3xl text-slate-50">Can't {{ job }} catagory</h1>
+            <h2 class="text-center text-2xl text-slate-50">Probrem : {{msg_error}}</h2>
+            <button class="btn btn-accent mt-4" @click="closealert()">OKAY</button>
+          </div>
+        </div>
     </div>
 </div>
 
@@ -388,4 +451,16 @@ try {
 </template>
  
 <style scoped>
+.popup-container {
+  background-color: rgba(124, 223, 86, 0.4);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+.popup-container2 {
+  background-color: rgba(223, 86, 86, 0.4);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
 </style>

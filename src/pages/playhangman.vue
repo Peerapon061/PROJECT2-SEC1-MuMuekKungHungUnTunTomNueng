@@ -53,8 +53,8 @@ const filterSearch = computed(() => {
         <game  @ending="closegame()" :question="SelectedCata" :change="changgame" @chang="changdone()"/>
     </div> 
   <div class=" " v-show="!open==1">
-    <h1 class="flex justify-center items-center mt-10  text-5xl">Choose category </h1>
-    <div class="flex justify-center items-center w-full h-12 mt-5 bg-white">Click on a category to play hangman</div>  
+    <h1 class="flex justify-center items-center mt-10  text-5xl text-black">Choose category </h1>
+    <div class="flex justify-center items-center w-full h-12 mt-5 bg-white text-black">Click on a category to play hangman</div>  
     <div class="flex justify-center items-center w-full h-12 mt-5 "><input type="text" placeholder=" Search.." class="rounded-xl h-10 w-full bg-gray-200 mx-64 pl-10" v-model.trim="searchKeyword"></div>  
 <div class=" flex overflow-x-auto  w-auto items-center mt-4 pb-20">
   <button class=" w-60 h-60  mx-2 my-2 rounded-2xl text-3xl shadow-black/40  text-white flex btn btn-active   bg-yellow-700 font-bold" @click="randomquiz()">Random</button>
@@ -69,7 +69,7 @@ const filterSearch = computed(() => {
   </div>
     <div class="w-full h-1/5 bg-WoodFloor">
       <div class="w-full h-full bg-gradient-to-b from-black  to-black/50">
-    <RouterLink to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto   text-3xl bg-orange-400 font-bold">BACK TO MAIN MENU </RouterLink>
+    <RouterLink to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto   text-3xl bg-yellow-400 font-bold">BACK TO MAIN MENU </RouterLink>
     </div>
    </div>
 </div>

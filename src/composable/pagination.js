@@ -3,7 +3,6 @@ const pagination=(arrVocab,page=1)=>{
     let count = 1
     let realObj = []
     let temp = []
-    console.log(arrVocab);
     arrVocab.forEach(element => {
       
         
@@ -21,8 +20,6 @@ const pagination=(arrVocab,page=1)=>{
     });
 
     if(temp.length!==0){ realObj.push({'pageId':count,'pageVocabs' : temp})}
-
-    console.log(realObj);
   return realObj.find(x=>x.pageId == page).pageVocabs
 }
 

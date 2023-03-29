@@ -113,8 +113,8 @@ const DeleteVocabfunction = (event) =>
 </script>
  
 <template>
-<div>
-<table class="table table-zebra w-11/12   mx-auto text-lg text-white ">
+<div class="font-Comfortaa">
+<table class="table table-zebra w-11/12   mx-auto text-lg dark:text-white ">
             <!-- head -->
             <thead >
               <tr>
