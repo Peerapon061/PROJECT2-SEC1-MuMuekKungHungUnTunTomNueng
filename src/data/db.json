@@ -53,8 +53,8 @@
   {"id":6,
     "CategoryName":"verb2",
   "vocabs":[
-    {"word":"like","meaning":"ชอบ "},
-    {"word":"see","meaning":"เห็น "},
+    {"word":"like","meaning":"ชอบ"},
+    {"word":"see","meaning":"เห็น"},
     {"word":"need","meaning":"ต้องการ"}
        
   ]
