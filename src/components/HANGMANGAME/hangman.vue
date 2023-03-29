@@ -8,12 +8,15 @@ import Word from "./components/Word.vue";
 import Pop from "./components/Popup.vue";
 import keyboard from "./components/KEYBOARD/keyboard.vue"
 import hint from "./components/hint.vue"
+
 const props = defineProps({
      question: { type:Array,  default:[]} ,
      change: { type:Boolean,  default:false} 
-}) 
+})
+
 let count=ref(0)
 const allWord =  ref(props.question)
+
 const clickKd =(event)=>{
            const letter = event.toLowerCase()
          guessedLetters.value.push(letter);        
@@ -55,6 +58,7 @@ const reset = () => {
     resetkb.value++
     endgame.value=0
 }
+
 const next = () => {
     if(count.value<mygamelist.value.length-2){
         guessedLetters.value =[]
@@ -68,6 +72,7 @@ const next = () => {
     endgame.value++
     }
 }
+
 let resetkb=ref(0)
 let endgame=ref(0)
 
@@ -75,6 +80,7 @@ const closegame=()=>{
     emits('ending')
     reset()
 }
+
 const initGame=()=>{
    if(props.change==true) {
     let kk=props.question
@@ -106,7 +112,5 @@ const initGame=()=>{
     <Pop :status="status " :word="word" @reset ="reset()" @next="next()" :endgame="endgame" @menu="closegame()"/>
     </div>
 </template>
-
 <style scoped>
-
 </style>
