@@ -7,7 +7,7 @@ import tabpagination from '../components/tabpagination.vue';
 
 import TableVocabInCategory from '../components/TableVocabInCategory.vue';
 import Iconsong from '../components/song/Iconsong.vue';
-
+//master
 // แยกคอมโพเนน ของหน้าที่เปลี่ยนได้
 onBeforeMount(async ()=>{
   let categories = await getCategories()
