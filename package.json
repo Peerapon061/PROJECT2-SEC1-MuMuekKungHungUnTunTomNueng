@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "daisyui": "^2.51.4",
-    "json-server": "^0.17.2",
+    "json-server": "^0.17.3",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tw-elements": "^1.0.0-beta1",
     "vue": "^3.2.47",

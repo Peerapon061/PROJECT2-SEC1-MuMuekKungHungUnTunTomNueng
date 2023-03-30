@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import Iconsong from '../components/song/Iconsong.vue';
+import {playsound,worngSound} from '../composable/sound.js'
 </script>
  
 <template>
@@ -18,9 +19,9 @@ import Iconsong from '../components/song/Iconsong.vue';
       </h1> 
      </div>
      <div class=" mb-5">
-      <RouterLink to="/playgame" class="  relative text-3xl  space-y-10 flex flex-col     p-5   btn btn-active w-2/6 h-1/4 mx-auto   border-4  bg-yellow-400 text-black font-bold cursor-pointer mb-2 font-Comfortaa">Play      </RouterLink>
-      <RouterLink to="/categories" class="  relative text-3xl font-Comfortaa space-y-10 flex flex-col     p-5   btn btn-active w-2/6 h-1/4 mx-auto   border-4  bg-yellow-400 text-black font-bold cursor-pointer mb-2">Edit Category     </RouterLink>
-      <RouterLink to="/howtoplay" class="  relative text-3xl font-Comfortaa space-y-10 flex flex-col     p-5   btn btn-active w-2/6 h-1/4 mx-auto   border-4  bg-yellow-400 text-black font-bold cursor-pointer">How to play     </RouterLink>
+      <RouterLink  @click="playsound" to="/playgame" class="  relative text-3xl  space-y-10 flex flex-col     p-5   btn btn-active w-2/6 h-1/4 mx-auto   border-4  bg-yellow-400 text-black font-bold cursor-pointer mb-2 font-Comfortaa">Play      </RouterLink>
+      <RouterLink  @click="playsound" to="/categories" class="  relative text-3xl font-Comfortaa space-y-10 flex flex-col     p-5   btn btn-active w-2/6 h-1/4 mx-auto   border-4  bg-yellow-400 text-black font-bold cursor-pointer mb-2">Edit Category     </RouterLink>
+      <RouterLink  @click="playsound"  to="/howtoplay" class="  relative text-3xl font-Comfortaa space-y-10 flex flex-col     p-5   btn btn-active w-2/6 h-1/4 mx-auto   border-4  bg-yellow-400 text-black font-bold cursor-pointer">How to play     </RouterLink>
     </div>
     </div>
 

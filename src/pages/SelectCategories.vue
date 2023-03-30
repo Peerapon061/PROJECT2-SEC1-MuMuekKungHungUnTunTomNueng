@@ -4,6 +4,7 @@ import {ref,onBeforeMount,computed} from 'vue'
 import {myword} from '../class/myword.js'
 import Card from '../components/Card.vue'
 import tabpagination from '../components/tabpagination.vue';
+import {playsound,worngSound,colletSound} from '../composable/sound.js'
 
 import TableVocabInCategory from '../components/TableVocabInCategory.vue';
 import Iconsong from '../components/song/Iconsong.vue';
@@ -71,6 +72,7 @@ const EditCategoryfunc= (i) =>{
   
 
     EditCategory.value=!EditCategory.value
+    playsound()
   }
 const addVocab = () => {
   //เชคว่าชื่อไม่ซ้ำ
@@ -90,10 +92,12 @@ const addVocab = () => {
     else{
         alert('please enter Category name')
     }
+    colletSound()
 }
 // กด ปุ่ม close ตอน add vocab
 const clear = () =>{
     TemporaryVocab.value={word:'',meaning:''}
+    playsound()
 }
 //ลบ คำศัพท์ โดยการแก้ไข
 const deleteVocab = (event) =>{
@@ -125,6 +129,7 @@ const  changPage=(event,value,i)=>{
       idCategory.value = event.target.id
       page.value['show']=true
         page.value['add']=false
+      
      }
    
     
@@ -132,19 +137,24 @@ const  changPage=(event,value,i)=>{
       else{
         page.value['add']=true
         page.value['show']=false
+        
       }
 
       checknumber.value=i
+
+      playsound()
 }
 const deleteCategory =async (event)=>{
   let id = event.target.id
   try {
     const res = await fetch(`http://localhost:5000/Categoties/${id}`, {
       method: "DELETE",
+      
     });
     if (res.ok) {
       CategoryAll.value = CategoryAll.value.filter((category) => {
         return category.id != event.target.id;
+        
       } )
         alert.value=true
         alert_complete.value=true
@@ -162,9 +172,14 @@ const deleteCategory =async (event)=>{
   if (page.value['show']) {
     changPage(event)
     console.log("can change")
+   
   }
+
+  colletSound()
+  
 }
 const AddCategory =async (event)=>{
+  
   countId ++ 
   let id = event.target.id
     if(TemporaryName.value.length<15 && TemporaryGroupVocabs.value.length>1 && CategoryAll.value.every((x)=>x.CategoryName!==TemporaryName.value)){
@@ -188,6 +203,7 @@ const AddCategory =async (event)=>{
       alert_complete.value=false
       msg_complete.value=""
       }, "2300")
+      colletSound()
     } else {
       throw new error("Error, cannot delete data!");}
   } catch (error) {
@@ -196,6 +212,8 @@ const AddCategory =async (event)=>{
       alert_error.value=true
       job.value="create"
       msg_error.value="Server Error"
+      worngSound()
+      
   }
     }
     else {
@@ -204,8 +222,11 @@ const AddCategory =async (event)=>{
       alert_error.value=true
       job.value="create"
       msg_error.value="Need manyword or this category name already exists"
+      worngSound()
     }
-  
+
+
+  playsound()
   }
   //edit
 
@@ -288,7 +309,7 @@ try {
   <div class=" w-full h-full mt-0  flex flex-col text-black bg-gradient-to-b from-amber-900  to-black bg-cover font-Comfortaa ">
 
     <div class="flex w-full h-24 p-2   pl-10 bg-amber-900 justify-between ">
-     <RouterLink to="/" class=" relative    btn btn-active  w-28 h-16  text-3xl bg-orange-400 border-1 font-bold"> <img  class="w-14 h-14 hover:w-16 hover:h-16  " src="../img/left-arrow.png" ></RouterLink> 
+     <RouterLink  @click="playsound" to="/" class=" relative    btn btn-active  w-28 h-16  text-3xl bg-orange-400 border-1 font-bold"> <img  class="w-14 h-14 hover:w-16 hover:h-16  " src="../img/left-arrow.png" ></RouterLink> 
     
     <Iconsong class=" flex justify-end h-14 "/>
     </div>
@@ -307,6 +328,7 @@ try {
         @changPage="changPage"
         @EditCategoryfunc="EditCategoryfunc"
         @deleteCategory="deleteCategory"
+        
         />
       
         </div>
@@ -326,8 +348,8 @@ try {
         <div class="flex space-x-3 w-full  h-1/6 justify-center"> 
         <!-- ปุ่ม หน้า add -->
         
-        <button  class="btn bg-orange-500 text-black border-amber-400 hover:bg-orange-200 hover:border-amber-100 w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
-          <label for="my-modal" class="btn bg-lime-600 text-black w-2/12  border-lime-500 hover:bg-lime-200 hover:border-amber-100" >add vocabulary</label> 
+        <button   class="btn bg-orange-500 text-black border-amber-400 hover:bg-orange-200 hover:border-amber-100 w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
+          <label @click="playsound" for="my-modal" class="btn bg-lime-600 text-black w-2/12  border-lime-500 hover:bg-lime-200 hover:border-amber-100" >add vocabulary</label> 
         </div>
        
          <div class="flex flex-col m-auto w-11/12 h-[23rem] rounded-lg overflow-auto bg-slate-400"> 
@@ -381,7 +403,7 @@ try {
             <input type="text"  v-model="TemporaryVocab.meaning"  placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs bg-slate-600" />
         </div>
     <div class="modal-action flex">
-      <label for="my-modal" class="btn" @click="clear">Close</label>
+      <label  for="my-modal" class="btn" @click="clear">Close</label>
       <label for="my-modal" class="btn" @click="addVocab">Add</label>
     </div>
   </div>

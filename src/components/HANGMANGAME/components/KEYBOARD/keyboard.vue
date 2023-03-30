@@ -1,5 +1,6 @@
 <script setup>
 import buttonletter from "./components/button.vue";
+import { playsound,worngSound,} from "../../../../composable/sound.js";
 import { ref, computed } from "vue";
 defineEmits(['press'])
 const keybordValue = ref([{ key: 'A', disable: 0, styleColor: 0 }, { key: 'B', disable: 0, styleColor: 0 }, { key: 'C', disable: 0, styleColor: 0 },
@@ -24,8 +25,10 @@ function correct(letter) {
   let x = wordsplit.value.find((o) => o.toLocaleUpperCase() == letter)
   if (x === undefined) {
     keybordValue.value.find((x) => x.key === letter).styleColor = 1
+  
   } else {
     keybordValue.value.find((x) => x.key === letter).styleColor = 2
+    
   }
   return keybordValue.value.find((x) => x.key === letter).styleColor
 }

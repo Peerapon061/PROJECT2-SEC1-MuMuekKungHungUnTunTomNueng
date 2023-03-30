@@ -3,6 +3,7 @@ import {onMounted,ref,computed} from 'vue';
 import { getCategories } from '../composable/getCategories';
 import { RouterLink } from 'vue-router';
 import game from '../components/HANGMANGAME/hangman.vue'
+import { playsound,colletSound,worngSound } from '../composable/sound';
 const cataForGame=ref([])
 const SelectedCata=ref([{word:"cat",meaning:"เเมว"},
     {word:"pooh",meaning:"ภู"},
@@ -30,11 +31,14 @@ function getCategory(cateid) {
    setTimeout(() => {
   opengame()
 }, 200);
+playsound()
 }
 function randomquiz(){
   let x=Math.floor(Math.random() * (cataForGame.value.length - 1 + 1) + 1)
  
   getCategory(x)
+  playsound()
+  
 }
 const searchKeyword = ref("");
 const filterSearch = computed(() => {
@@ -68,7 +72,7 @@ const filterSearch = computed(() => {
   </div>
     <div class="w-full h-1/5 bg-WoodFloor">
       <div class="w-full h-full bg-gradient-to-b from-black  to-black/50">
-    <RouterLink to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto   text-amber-800 hover:text-white hover:bg-slate-800  text-3xl bg-yellow-400 font-bold">BACK TO MAIN MENU </RouterLink>
+    <RouterLink @click="playsound" to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto   text-amber-800 hover:text-white hover:bg-slate-800  text-3xl bg-yellow-400 font-bold">BACK TO MAIN MENU </RouterLink>
     </div>
    </div>
 </div>

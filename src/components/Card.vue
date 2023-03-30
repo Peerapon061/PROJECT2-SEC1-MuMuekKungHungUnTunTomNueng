@@ -1,5 +1,7 @@
 <script setup>
+import {playsound,worngSound} from '../composable/sound.js';
 defineEmits(['changPage','EditCategoryfunc','deleteCategory'])
+
 const props = defineProps({
     Category:{
         type:Object
@@ -20,9 +22,15 @@ const props = defineProps({
         type:Number
     }
 
-
+   
 
 })
+
+
+
+
+
+
 </script>
  
 <template>
@@ -32,7 +40,7 @@ const props = defineProps({
                  <h2 class="card-title">{{ props.Category.CategoryName }}</h2>
                  
                <div class="card-actions justify-end ">
-                 <button :id=props.Category.id  ref="CategoryCard"  class="btn border-0 bg-amber-400 text-black" @click="$emit('changPage',$event,'show',index)" v-show="!EditCategory" 
+                 <button    :id=props.Category.id  ref="CategoryCard"  class="btn border-0 bg-amber-400 text-black" @click="$emit('changPage',$event,'show',index)" v-show="!EditCategory" 
                  :disabled="props.PageObject.show&&props.index===props.checknumber"
                  >View</button>
                  <button :id= props.Category.id ref="CategoryCard" class="btn border-0 bg-amber-400 text-black" @click="$emit('EditCategoryfunc',props.index,$event)" v-show="!props.EditCategory">Delete</button>

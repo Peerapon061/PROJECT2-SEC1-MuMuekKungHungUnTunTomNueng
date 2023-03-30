@@ -1,159 +1,103 @@
 {
   "Categoties": [
     {
-      "id": 1,
-      "CategoryName": "verb",
+      "CategoryName": "asdasd",
       "vocabs": [
         {
-          "word": "read",
-          "meaning": "อ่าน"
+          "id": 99,
+          "word": "asd",
+          "meaning": "asdasd",
+          "status": false
         },
         {
-          "word": "write",
-          "meaning": "เขียน"
-        },
-        {
-          "word": "Learn",
-          "meaning": "เรียน"
+          "id": 100,
+          "word": "asda",
+          "meaning": "aaaaa",
+          "status": false
         }
-      ]
-    },
-    {
-      "id": 2,
-      "CategoryName": "animal1",
-      "vocabs": [
-        {
-          "word": "alligator",
-          "meaning": "จระเข้"
-        },
-        {
-          "word": "ant",
-          "meaning": "มด"
-        },
-        {
-          "word": "bat",
-          "meaning": "ค้างคาว"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "CategoryName": "animal2",
-      "vocabs": [
-        {
-          "word": "bear",
-          "meaning": "หมี"
-        },
-        {
-          "word": "camel",
-          "meaning": "อูฐ"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "CategoryName": "animal3",
-      "vocabs": [
-        {
-          "word": "deer",
-          "meaning": "กวาง"
-        },
-        {
-          "word": "dog",
-          "meaning": "สุนัข"
-        },
-        {
-          "word": "donkey",
-          "meaning": "ลา"
-        },
-        {
-          "word": "dragonfly",
-          "meaning": "แมลงปอ"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "CategoryName": "animal4",
-      "vocabs": [
-        {
-          "word": "duck",
-          "meaning": "เป็ด"
-        }
-      ]
+      ],
+      "id": 9
     },
     {
       "id": 6,
-      "CategoryName": "verb2",
+      "CategoryName": "asdsd",
       "vocabs": [
         {
-          "word": "Like",
-          "meaning": "ชอบ "
+          "id": 98,
+          "word": "asda",
+          "meaning": "asdsd",
+          "status": false
         },
         {
-          "word": "See",
-          "meaning": "เห็น "
-        },
-        {
-          "word": "Need",
-          "meaning": "ต้องการ"
+          "id": 99,
+          "word": "asd",
+          "meaning": "asdad",
+          "status": false
         }
       ]
+    },
+    {
+      "CategoryName": "asd",
+      "vocabs": [
+        {
+          "id": 149,
+          "word": "aa",
+          "meaning": "wwww",
+          "status": false
+        },
+        {
+          "id": 150,
+          "word": "aw",
+          "meaning": "ee",
+          "status": false
+        }
+      ],
+      "id": 8
+    },
+    {
+      "CategoryName": "222222",
+      "vocabs": [
+        {
+          "id": 158,
+          "word": "22",
+          "meaning": "22",
+          "status": false
+        },
+        {
+          "id": 159,
+          "word": "3",
+          "meaning": "3",
+          "status": false
+        }
+      ],
+      "id": 5
     },
     {
       "id": 7,
-      "CategoryName": "verb3",
+      "CategoryName": "weqwe",
       "vocabs": [
         {
-          "word": "Eat",
-          "meaning": "กิน"
-        },
-        {
-          "word": "Drink",
-          "meaning": "ดื่ม"
-        },
-        {
-          "word": "Teach",
-          "meaning": "สอน"
-        },
-        {
-          "word": "Watch",
-          "meaning": "ดู"
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "CategoryName": "33333",
-      "vocabs": [
-        {
-          "id": 81,
-          "word": "dwaw",
-          "meaning": "waa",
+          "id": 177,
+          "word": "as",
+          "meaning": "dw",
           "status": false
         },
         {
-          "id": 82,
-          "word": "wawad",
-          "meaning": "wa",
+          "id": 178,
+          "word": "a",
+          "meaning": "asd",
           "status": false
         },
         {
-          "id": 83,
-          "word": "dwa",
-          "meaning": "wdaaw",
+          "id": 179,
+          "word": "aweewe",
+          "meaning": "sddw",
           "status": false
         },
         {
-          "id": 84,
-          "word": "dwawa",
-          "meaning": "sadw",
-          "status": false
-        },
-        {
-          "id": 85,
-          "word": "dwawd",
-          "meaning": "dwa",
+          "id": 180,
+          "word": "asqw",
+          "meaning": "sdsdee",
           "status": false
         }
       ]

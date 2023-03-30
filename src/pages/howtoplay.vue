@@ -2,7 +2,7 @@
 import "tw-elements";
 
 import { RouterLink } from 'vue-router';
-
+import {playsound,worngSound} from '../composable/sound.js'
 
 </script>
  
@@ -163,7 +163,7 @@ import { RouterLink } from 'vue-router';
 
 
 
-      <RouterLink to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto  font-Comfortaa border text-amber-800 border-black  text-3xl bg-yellow-400 hover:text-white hover:bg-slate-800    font-bold">BACK TO MAIN MENU </RouterLink>
+      <RouterLink  @click ="playsound" to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto  font-Comfortaa border text-amber-800 border-black  text-3xl bg-yellow-400 hover:text-white hover:bg-slate-800    font-bold">BACK TO MAIN MENU </RouterLink>
 
 
     </div>

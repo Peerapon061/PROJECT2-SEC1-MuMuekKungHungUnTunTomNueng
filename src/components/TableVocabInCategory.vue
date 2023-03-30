@@ -1,6 +1,7 @@
 <script setup>
 import { ref , onMounted,onUpdated,onBeforeUnmount,computed} from 'vue'
 import { pagination } from '../composable/pagination'
+import { playsound,worngSound,colletSound } from '../composable/sound.js';
 
 //ยังไงก็ต้องเอา pagination มาวนในนี้ให้ได้ 
 //แก้ ให้แก้ไขชื่อ catagory ได้
@@ -62,13 +63,14 @@ const props = defineProps({
 // })
 
 const EditVocabfunction = (event) =>{
-
+  playsound()
   let editObjVocabStatus = EditObjectShowPage.value.find(x=>x.id == event.target.id)
   console.log(EditObjectShowPage.value);
   editObjVocabStatus.status = !editObjVocabStatus.status
 console.log( editObjVocabStatus.value.status);
 }
 const confrimfunction = (event)=>{
+  playsound()
 console.log(event.target.id);
 console.log(EditObjectShowPage.value);
 
@@ -79,8 +81,10 @@ console.log(EditObjectShowPage.value);
   EditAllObject.value.vocabs = EditAllObject.value.vocabs.map((vocab) => {
                 if (vocab.id == editObjVocab.id) {
                   vocab.word = editObjVocab.word       
-                  vocab.meaning = editObjVocab.meaning        
+                  vocab.meaning = editObjVocab.meaning    
+                   
                  return vocab
+                 
                          }
                   else{
                     return vocab
@@ -93,20 +97,26 @@ console.log(EditObjectShowPage.value);
   console.log(editObjVocab.status)
 
   emits('editvocab',EditAllObject.value)
+  
 }
 
 
 const DeleteVocabfunction = (event) =>
+
 { 
+  
+  
   console.log(typeof(event.target.id));
   console.log(event.target.id);
   if(EditAllObject.value.vocabs.length>2){
     EditAllObject.value.vocabs  = EditAllObject.value.vocabs.filter(x=>x.id != event.target.id)
     emits('editvocab',EditAllObject.value)
+    colletSound()
   }
   else{
     alert("Words in category must have at least 2")
   }
+
 }
 
 
@@ -143,8 +153,8 @@ const DeleteVocabfunction = (event) =>
                      <FluentEmojiHighContrastCheckMarkButton   :id=vocab.id v-if="vocab.status"  class="w-12 h-12 text-white hover:text-stone-500" @click="confrimfunction($event,index)" />
                      <span v-if="vocab.status" :id=vocab.id @click="DeleteVocabfunction($event,index)"   class="text-3xl text-red-500 font-bold hover:text-amber-400" >X</span> -->
                      
-                     <button class="btn btn-error" :id=vocab.id v-if="!vocab.status"  @click="EditVocabfunction">Edit</button>
-                     <button class="btn btn-error" :id=vocab.id v-if="vocab.status" @click="confrimfunction">OK</button> 
+                     <button  class="btn btn-error" :id=vocab.id v-if="!vocab.status"  @click="EditVocabfunction">Edit</button>
+                     <button  class="btn btn-error" :id=vocab.id v-if="vocab.status" @click="confrimfunction">OK</button> 
                      <button class="btn btn-error" v-if="vocab.status" :id=vocab.id  @click="DeleteVocabfunction">Delete</button>
                 </td>
               

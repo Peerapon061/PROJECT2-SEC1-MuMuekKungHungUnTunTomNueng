@@ -17,7 +17,7 @@ const songFunc =()=>{
 <template>
  
     <div class="w-15 h-15 flex   ">
-            <audio autoplay loop  src="sound1.mp3"   ref="myAudio" type="audio/mpeg" ></audio>
+            <!-- <audio autoplay loop  src="sound1.mp3"   ref="myAudio" type="audio/mpeg" ></audio> -->
           <label class="swap text-white  "   >
       <input type="checkbox" @click=" songFunc() "/>
 
