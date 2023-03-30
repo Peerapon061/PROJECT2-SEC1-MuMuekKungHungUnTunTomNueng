@@ -52,7 +52,7 @@ const filterSearch = computed(() => {
 });
 
 </script>
- 
+ <!-- mergeee to master dev  -->
 <template>
 <div class="w-screen  h-screen bg-gradient-to-b from-amber-900 to-black font-Comfortaa ">
   <div class="  m-auto relative top-10  border-4 border-amber-900 drop-shadow-lg   w-4/5 h-4/5    bg-gradient-to-r from-yellow-600 to-yellow-500  bg-cover"> 
