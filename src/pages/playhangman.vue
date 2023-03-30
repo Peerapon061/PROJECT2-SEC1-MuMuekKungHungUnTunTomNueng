@@ -8,8 +8,7 @@ const SelectedCata=ref([{word:"cat",meaning:"เเมว"},
     {word:"pooh",meaning:"ภู"},
     {word:"university",meaning:"มหาลัย"}])
 onMounted(async()=>{
-    cataForGame.value=await getCategories()
-    
+    cataForGame.value=await getCategories()   
 })
 let open=ref(0)
 function closegame() {
@@ -26,7 +25,13 @@ function changdone() {
 }
 function getCategory(cateid) {
    let game=cataForGame.value.find((x)=>x.id==cateid)
-   SelectedCata.value=game.vocabs
+   try{
+    SelectedCata.value=game.vocabs
+   }
+   catch{
+    console.log("wait");
+   }
+   
    setTimeout(() => {
   opengame()
 }, 200);
