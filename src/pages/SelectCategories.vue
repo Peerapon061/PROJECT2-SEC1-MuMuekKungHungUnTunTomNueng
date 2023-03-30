@@ -312,11 +312,11 @@ try {
         </div>
     </div>
     <!-- หน้าสำหรับ add -->
-    <div class=" w-4/6 h-5/6 space-y-5 mb-20 flex flex-col p-4  pt-4  mx-auto   border-4 rounded-lg border-amber-900 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 relative " >
+    <div class=" w-4/6 h-5/6 space-y-5 mb-20 flex flex-col p-4  pt-4  mx-auto   border-4 rounded-lg border-amber-900 bg-gradient-to-r from-yellow-600 to-yellow-500 relative " >
       
       <div class="w-full h-full flex flex-col  " v-show="page.add && !alert" >
-        <h1 class="text-4xl flex items-center justify-center mb-3">Create catagory </h1>
-        <div class="flex w-full h-1/6 space-x-3 justify-center">  
+        <h1 class="text-4xl flex items-center w-3/5 mx-auto p-3 rounded-full justify-center mb-3 font-RampartOne bg-amber-400 font-extrabold">Create catagory </h1>
+        <div class="flex w-full h-20  space-x-3 justify-center">  
           <div class="grid h-12">
         <h1 class="text-xl">Category Name : </h1> 
         <label class="text-sm">Between 2-15 characters</label> 
@@ -326,11 +326,10 @@ try {
         <div class="flex space-x-3 w-full  h-1/6 justify-center"> 
         <!-- ปุ่ม หน้า add -->
         
-        <button  class="btn btn-info w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
-         </div>
-         <div class="flex justify-center mb-1">
-         <label for="my-modal" class="btn bg-green-900 w-2/12  " >add vocabulary</label>
+        <button  class="btn bg-orange-500 text-black border-amber-400 hover:bg-orange-200 hover:border-amber-100 w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
+          <label for="my-modal" class="btn bg-lime-600 text-black w-2/12  border-lime-500 hover:bg-lime-200 hover:border-amber-100" >add vocabulary</label> 
         </div>
+       
          <div class="flex flex-col m-auto w-11/12 h-[23rem] rounded-lg overflow-auto bg-slate-400"> 
             <div >
 
@@ -358,7 +357,7 @@ try {
             {{ Vocab.meaning}}
           </div>
         </td>
-        <td><span :id=Vocab.word @click="deleteVocab"> X </span></td>
+        <td><span :id=Vocab.word @click="deleteVocab" class="text-red-600 text-3xl  font-extrabold "> X </span></td>
       </tr>
     
 

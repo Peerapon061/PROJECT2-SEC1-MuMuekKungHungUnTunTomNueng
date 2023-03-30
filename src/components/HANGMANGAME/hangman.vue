@@ -96,7 +96,7 @@ const initGame=()=>{
 
 <template>
     <p class="hidden">{{ initGame() }}</p>
-    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:cursor-pointer transition duration-150  active:scale-90">Close</button>
+    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
     <div class="-mt-11">
         <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
