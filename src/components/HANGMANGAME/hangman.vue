@@ -12,7 +12,8 @@ import { playsound } from '../../composable/sound.js';
 
 const props = defineProps({
      question: { type:Array,  default:[]} ,
-     change: { type:Boolean,  default:false} 
+     change: { type:Boolean,  default:false}, 
+     name: { type:String,  default:"Hangman"}
 })
 
 let count=ref(0)
@@ -120,7 +121,7 @@ function playsoundS(para){
     <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
 
     <div class="-mt-11">
-        <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
+        <Header  class="mb-3" :wrongcount="wrongLetters.length" :name="props.name"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
         <div class="grid justify-center items-center">
         <Figure :wrongcount="wrongLetters.length"/>

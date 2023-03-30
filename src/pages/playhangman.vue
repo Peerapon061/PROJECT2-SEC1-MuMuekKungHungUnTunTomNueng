@@ -5,6 +5,7 @@ import { RouterLink } from 'vue-router';
 import game from '../components/HANGMANGAME/hangman.vue'
 import { playsound,colletSound,worngSound } from '../composable/sound';
 const cataForGame=ref([])
+const cataname=ref("")
 const SelectedCata=ref([{word:"cat",meaning:"เเมว"},
     {word:"pooh",meaning:"ภู"},
     {word:"university",meaning:"มหาลัย"}])
@@ -28,6 +29,7 @@ function getCategory(cateid) {
    let game=cataForGame.value.find((x)=>x.id==cateid)
    try{
     SelectedCata.value=game.vocabs
+    cataname.value=game.CategoryName
    }
    catch{
     console.log("wait");
@@ -39,8 +41,14 @@ function getCategory(cateid) {
 playsound()
 }
 function randomquiz(){
-  let x=Math.floor(Math.random() * (cataForGame.value.length - 1 + 1) + 1)
-  getCategory(x)
+  
+  let listid=[]
+  cataForGame.value.forEach((x)=>{
+   listid.push(x.id)
+  })
+  let randomlist=Math.floor(Math.random() * (listid.length  + 0) + 0)
+  let  randomresult=listid[randomlist]
+  getCategory(randomresult)
   playsound()
   
 }
@@ -57,7 +65,7 @@ const filterSearch = computed(() => {
 <div class="w-screen  h-screen bg-gradient-to-b from-amber-900 to-black font-Comfortaa ">
   <div class="  m-auto relative top-10  border-4 border-amber-900 drop-shadow-lg   w-4/5 h-4/5    bg-gradient-to-r from-yellow-600 to-yellow-500  bg-cover"> 
     <div class="popup-container w-5/5 h-5/5 bg-gradient-to-r text-black font-extrabold from-yellow-600 to-yellow-500" v-show="open==1">
-        <game  @ending="closegame()" :question="SelectedCata" :change="changgame" @chang="changdone()"/>
+        <game  @ending="closegame()" :question="SelectedCata" :change="changgame" @chang="changdone()" :name="cataname" />
     </div> 
   <div class=" " v-show="!open==1">
     <h1 class="flex justify-center items-center mt-10  text-5xl font-RampartOne  bg-gradient-to-br from-yellow-200  to-amber-300 py-5 text-black font-extrabold"> Choose category </h1>

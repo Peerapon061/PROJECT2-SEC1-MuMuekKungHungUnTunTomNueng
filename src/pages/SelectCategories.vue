@@ -34,7 +34,7 @@ const msg_error=ref("")
 const msg_complete=ref("")
 const job=ref("")
 let countPage = ref(1) //หน้า ที่ Show pagination
-let countId = 2 // id ตอนเพิ่ม categories
+let countId = 100 // id ตอนเพิ่ม categories
 
 const checkid=()=>{
   let x=CategoryAll.value.length
@@ -342,7 +342,7 @@ try {
         <!-- ปุ่ม หน้า add -->
 
 
-        <button  class="btn bg-orange-500 text-black border-amber-400 hover:bg-orange-200 hover:border-amber-100 w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
+        <button  class="btn bg-orange-500 text-black border-amber-400 hover:bg-orange-200 hover:border-amber-100 w-2/12  " @click="AddCategory" :disabled="TemporaryName.trim().length<2 ||TemporaryName.trim().length>15 " >add Category</button>
           <label for="my-modal" class="btn bg-lime-600 text-black w-2/12  border-lime-500 hover:bg-lime-200 hover:border-amber-100" >add vocabulary</label> 
          </div>
          
