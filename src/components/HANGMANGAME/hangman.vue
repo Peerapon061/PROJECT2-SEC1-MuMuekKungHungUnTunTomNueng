@@ -11,9 +11,11 @@ import hint from "./components/hint.vue"
 import { playsound } from '../../composable/sound.js';
 
 const props = defineProps({
+    cataName:{type:String},
      question: { type:Array,  default:[]} ,
      change: { type:Boolean,  default:false} 
 })
+const CataName = computed(()=>props.cataName)
 
 let count=ref(0)
 const allWord =  ref(props.question)
@@ -120,7 +122,7 @@ function playsoundS(para){
     <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
 
     <div class="-mt-11">
-        <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
+        <Header :cataName="CataName"  class="mb-3" :wrongcount="wrongLetters.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
         <div class="grid justify-center items-center">
         <Figure :wrongcount="wrongLetters.length"/>
