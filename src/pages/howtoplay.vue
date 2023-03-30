@@ -2,7 +2,12 @@
 import "tw-elements";
 
 import { RouterLink } from 'vue-router';
-import {playsound,worngSound} from '../composable/sound.js'
+import {playsound} from '../composable/sound.js'
+
+
+
+
+
 
 </script>
  
@@ -10,7 +15,7 @@ import {playsound,worngSound} from '../composable/sound.js'
   
     <div class="w-full  h-full bg-gradient-to-b from-amber-900  to-black ">
 
-  <div class="flex flex-col m-auto relative top-10  border-4 border-zinc-800 drop-shadow-lg   w-4/5 h-4/5 bg-white bg-cover"> 
+  <div class="flex flex-col m-auto relative top-10  border-4 border-zinc-800 drop-shadow-lg   w-4/5 h-5/5 bg-white bg-cover"> 
     
 
 
@@ -45,38 +50,33 @@ import {playsound,worngSound} from '../composable/sound.js'
       aria-label="Slide 3"></button>
   </div>
   <div
-    class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+    class="  h-4/5 relative w-full overflow-hidden after:clear-both after:block after:content-['']">
     <div
-      class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      class="relative float-left -mr-[100%]  w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
       data-te-carousel-active
       data-te-carousel-item
-      style="backface-visibility: hidden">
+      style="backface-visibility : hidden: ">
       <img
-        src="../img/img1.png"
-        class="block w-full"
+        src="../img/howtoplay/pic1.jpg"
+        class="block  "
         alt="..." />
       <div
         class="absolute inset-x-[15%] bottom-5 py-5 text-center text-black md:block">
-        <h5 class="text-5xl">STEP : 1</h5>
-        <p>
-          Some representative placeholder content for the first slide.
-        </p>
+        
+
       </div>
     </div>
     <div
-      class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      class="  relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
       data-te-carousel-item
       style="backface-visibility: hidden">
       <img
-        src="../img/img2.png"
-        class="block w-full"
+        src="../img/howtoplay/pic2.jpg"
+        class="block  "
         alt="..." />
       <div
         class="absolute inset-x-[15%] bottom-5  py-5 text-center text-black md:block">
-        <h5 class="text-5xl">STEP : 2</h5>
-        <p>
-          Some representative placeholder content for the second slide.
-        </p>
+        
       </div>
     </div>
     <div
@@ -84,7 +84,7 @@ import {playsound,worngSound} from '../composable/sound.js'
       data-te-carousel-item
       style="backface-visibility: hidden">
       <img
-        src="../img/img3.png"
+        src="../img/howtoplay/pic3.jpg"
         class="block w-full"
 
 
@@ -92,10 +92,7 @@ import {playsound,worngSound} from '../composable/sound.js'
       <div
         class="absolute inset-x-[15%] bottom-5  py-5 text-center text-black md:block">
         <h5 class="text-5xl">STEP : 3</h5>
-        <p class="text-red-400">
-          Some representative placeholder content for the third slide.
-          
-        </p>
+        
       </div>
     </div>
   </div>
@@ -163,8 +160,9 @@ import {playsound,worngSound} from '../composable/sound.js'
 
 
 
-      <RouterLink  @click ="playsound" to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto  font-Comfortaa border text-amber-800 border-black  text-3xl bg-yellow-400 hover:text-white hover:bg-slate-800    font-bold">BACK TO MAIN MENU </RouterLink>
-
+      <RouterLink to="/"  @click ="playsound"  class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto    bg-yellow-400 text-3xl font-bold" >
+<button   class="   text-3xl text-black font-bold"> BACK TO MAIN MENU</button>
+      </RouterLink>
 
     </div>
   
@@ -184,5 +182,7 @@ import {playsound,worngSound} from '../composable/sound.js'
 </template>
  
 <style scoped>
-
+.img{
+  
+}
 </style>

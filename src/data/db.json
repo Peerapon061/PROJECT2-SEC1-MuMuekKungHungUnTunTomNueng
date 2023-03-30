@@ -1,103 +1,25 @@
 {
   "Categoties": [
     {
-      "CategoryName": "asdasd",
+      "id": 5,
+      "CategoryName": "Activity",
       "vocabs": [
         {
-          "id": 99,
-          "word": "asd",
-          "meaning": "asdasd",
+          "id": 7,
+          "word": "exercise",
+          "meaning": "try",
           "status": false
         },
         {
-          "id": 100,
-          "word": "asda",
-          "meaning": "aaaaa",
-          "status": false
-        }
-      ],
-      "id": 9
-    },
-    {
-      "id": 6,
-      "CategoryName": "asdsd",
-      "vocabs": [
-        {
-          "id": 98,
-          "word": "asda",
-          "meaning": "asdsd",
+          "id": 8,
+          "word": "reading",
+          "meaning": "book",
           "status": false
         },
         {
-          "id": 99,
-          "word": "asd",
-          "meaning": "asdad",
-          "status": false
-        }
-      ]
-    },
-    {
-      "CategoryName": "asd",
-      "vocabs": [
-        {
-          "id": 149,
-          "word": "aa",
-          "meaning": "wwww",
-          "status": false
-        },
-        {
-          "id": 150,
-          "word": "aw",
-          "meaning": "ee",
-          "status": false
-        }
-      ],
-      "id": 8
-    },
-    {
-      "CategoryName": "222222",
-      "vocabs": [
-        {
-          "id": 158,
-          "word": "22",
-          "meaning": "22",
-          "status": false
-        },
-        {
-          "id": 159,
-          "word": "3",
-          "meaning": "3",
-          "status": false
-        }
-      ],
-      "id": 5
-    },
-    {
-      "id": 7,
-      "CategoryName": "weqwe",
-      "vocabs": [
-        {
-          "id": 177,
-          "word": "as",
-          "meaning": "dw",
-          "status": false
-        },
-        {
-          "id": 178,
-          "word": "a",
-          "meaning": "asd",
-          "status": false
-        },
-        {
-          "id": 179,
-          "word": "aweewe",
-          "meaning": "sddw",
-          "status": false
-        },
-        {
-          "id": 180,
-          "word": "asqw",
-          "meaning": "sdsdee",
+          "id": 9,
+          "word": "swimmimg",
+          "meaning": "water",
           "status": false
         }
       ]

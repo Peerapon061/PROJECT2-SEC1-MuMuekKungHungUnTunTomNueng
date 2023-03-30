@@ -1,6 +1,7 @@
 <script setup>
             import {computed} from 'vue'
             import '../../../assets/style.css'
+            import { playsound } from '../../../composable/sound';
             const props = defineProps({
               status: { type:String,  default: ''} ,
                  word:{type:String, default :''} ,
@@ -20,7 +21,7 @@ const emit=defineEmits(['next','reset','menu'])
         <h3 :class="status === 'win' ? 'text-green-600' : 'text-red-700 ' " class="text-center mb-4">{{ finalMessage}}</h3>
         <h2>ANSWER IS <span class="text-cyan-200  ">{{ word.toLocaleUpperCase() }}</span></h2>       
        <div class="grid  items-center">
-        <button  @click="$emit('reset')" :class="status=='win'?'hidden':''">Play agian </button>
+        <button  @click=" $emit('reset')" :class="status=='win'?'hidden':''">Play agian </button>
         <button  @click="$emit('menu')" :class="status=='win'?'hidden':''">Choose Category</button>
         <button  @click="$emit('next')" :class="status=='win'?'':'hidden'" class="grid items-center">Next Question </button>
       </div>
@@ -28,8 +29,8 @@ const emit=defineEmits(['next','reset','menu'])
     </div>
 
 </div>
-<div v-if="finalMessage=='YON WIN!' && props.endgame==1">
-  <div class ="popup-container2 bg-gradient-to-r from-rose-400 to-orange-300 font-alfra" id="popup-container">
+<div v-if="finalMessage=='YON WIN!' && props.endgame==1" >
+  <div class ="popup-container2   bg-gradient-to-r  from-yellow-600 to-yellow-500 " id="popup-container">
     <div class="grid justify-center items-center">
       <h1 class="text-8xl mt-52 text-yellow-300 waviy">Game Clear</h1>
       <button class="rounded-2xl hover:cursor-pointer transition duration-150  active:scale-90 bg-white text-orange-400 py-3 px-3 mt-6" @click="$emit('menu')">Choose Category</button>
@@ -75,9 +76,6 @@ const emit=defineEmits(['next','reset','menu'])
   align-items: center;
   justify-content: center;
 }
-
-
-
 .popup button {
   cursor: pointer;
   background-color: #fff;
@@ -109,4 +107,9 @@ const emit=defineEmits(['next','reset','menu'])
     transform: translateY(-20px)
   }
 }
+
+
+
+
+
 </style>

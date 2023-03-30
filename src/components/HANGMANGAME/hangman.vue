@@ -43,12 +43,15 @@ const correctLetters = computed(() =>
 const status = computed(()=>
 {
     if(wrongLetters.value.length === 6) {
+    playsoundS("losegame")
     return 'lost'
 
     }
 
-    if(letters.value.every(l => correctLetters.value.includes(l)))
-    return 'win'
+    if(letters.value.every(l => correctLetters.value.includes(l))){
+        playsoundS()
+        return 'win'}
+    
     else return ''
 })
 const reset = () => {
@@ -58,9 +61,11 @@ const reset = () => {
     word.value = allWord.value[mygamelist.value[0]].word
     resetkb.value++
     endgame.value=0
+    playsound()
 }
 
 const next = () => {
+    playsound()
     if(count.value<mygamelist.value.length-2){
         guessedLetters.value =[]
     word.value = allWord.value[mygamelist.value[++count.value]].word
@@ -94,13 +99,26 @@ const initGame=()=>{
    }
 }
 
+const losegame=ref('')
+const winround=ref('')
+function playsoundS(para){
+    if(para=="losegame"){
+        losegame.value.play()
+    }else{
+        winround.value.play()
+    }
+}
 </script>
 
 <template>
     <p class="hidden">{{ initGame() }}</p>
-    <button @click="closegame()" class="text-blue-300 border-2
-     bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white
-      hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
+
+
+
+    <audio   src="losegame.mp3"   ref="losegame" type="audio/mpeg" ></audio>
+    <audio   src="winround.mp3"   ref="winround" type="audio/mpeg" ></audio>
+    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
+
     <div class="-mt-11">
         <Header  class="mb-3" :wrongcount="wrongLetters.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
