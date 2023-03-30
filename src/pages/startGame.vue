@@ -7,7 +7,7 @@ import {playsound,worngSound} from '../composable/sound.js'
 <template>
 
     <div class="w-full  h-full bg-gradient-to-b from-amber-900  to-black ">
-      <div class="flex w-full h-20 justify-end p-5"> <Iconsong  class=" flex justify-end h-14 "/>  </div>
+      <div class="flex w-full h-20 justify-end p-5">  </div>
   <div class="flex flex-col m-auto relative  border-4  border-amber-900 drop-shadow-lg   w-4/5 h-4/5 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 bg-cover"> 
     <div class="w-full h-1/6 flex  pr-6  justify-end"> 
       

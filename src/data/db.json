@@ -23,6 +23,24 @@
           "status": false
         }
       ]
+    },
+    {
+      "CategoryName": "Animal-1",
+      "vocabs": [
+        {
+          "id": 4,
+          "word": "money",
+          "meaning": "ลิงกัง",
+          "status": false
+        },
+        {
+          "id": 5,
+          "word": "dog",
+          "meaning": "สุนัข",
+          "status": false
+        }
+      ],
+      "id": 4
     }
   ]
 }

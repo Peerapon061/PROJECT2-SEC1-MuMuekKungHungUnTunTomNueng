@@ -305,8 +305,6 @@ try {
 
     <div class="flex w-full h-24 p-2   pl-10 bg-amber-900 justify-between ">
      <RouterLink  @click="playsound" to="/" class=" relative    btn btn-active  w-28 h-16  text-3xl bg-orange-400 border-1 font-bold"> <img  class="w-14 h-14 hover:w-16 hover:h-16  " src="../img/left-arrow.png" ></RouterLink> 
-    
-    <Iconsong class=" flex justify-end h-14 "/>
     </div>
 <!-- asdad -->
   
