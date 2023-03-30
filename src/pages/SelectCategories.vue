@@ -320,12 +320,10 @@ try {
         </div>
         <div class="flex space-x-3 w-full  h-1/6 justify-center"> 
         <!-- ปุ่ม หน้า add -->
-        
-        <button  class="btn btn-info w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
+        <button  class="btn bg-orange-500 text-black border-amber-400 hover:bg-orange-200 hover:border-amber-100 w-2/12  " @click="AddCategory" :disabled="TemporaryName.length<2 ||TemporaryName.length>15 " >add Category</button>
+          <label for="my-modal" class="btn bg-lime-600 text-black w-2/12  border-lime-500 hover:bg-lime-200 hover:border-amber-100" >add vocabulary</label> 
          </div>
-         <div class="flex justify-center mb-1">
-         <label for="my-modal" class="btn bg-green-900 w-2/12  " >add vocabulary</label>
-        </div>
+         
          <div class="flex flex-col m-auto w-11/12 h-[23rem] rounded-lg overflow-auto bg-slate-400"> 
             <div >
 
