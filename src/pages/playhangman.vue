@@ -33,7 +33,6 @@ function getCategory(cateid) {
 }
 function randomquiz(){
   let x=Math.floor(Math.random() * (cataForGame.value.length - 1 + 1) + 1)
- 
   getCategory(x)
 }
 const searchKeyword = ref("");

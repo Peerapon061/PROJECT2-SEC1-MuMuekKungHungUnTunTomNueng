@@ -1,38 +1,20 @@
 {
   "Categoties": [
     {
-      "id": 1,
-      "CategoryName": "verb",
-      "vocabs": [
-        {
-          "word": "read",
-          "meaning": "อ่าน"
-        },
-        {
-          "word": "write",
-          "meaning": "เขียน"
-        },
-        {
-          "word": "Learn",
-          "meaning": "เรียน"
-        }
-      ]
-    },
-    {
       "id": 2,
-      "CategoryName": "animal1",
+      "CategoryName": "animal",
       "vocabs": [
         {
-          "word": "alligator",
-          "meaning": "จระเข้"
+          "id": 21,
+          "word": "dog",
+          "meaning": "dog",
+          "status": false
         },
         {
-          "word": "ant",
-          "meaning": "มด"
-        },
-        {
-          "word": "bat",
-          "meaning": "ค้างคาว"
+          "id": 23,
+          "word": "cat",
+          "meaning": "cat",
+          "status": false
         }
       ]
     },
@@ -41,119 +23,33 @@
       "CategoryName": "animal2",
       "vocabs": [
         {
-          "word": "bear",
-          "meaning": "หมี"
+          "id": 24,
+          "word": "nutnon",
+          "meaning": "nutnon",
+          "status": false
         },
         {
-          "word": "camel",
-          "meaning": "อูฐ"
+          "id": 26,
+          "word": "www",
+          "meaning": "www",
+          "status": false
         }
       ]
     },
     {
       "id": 4,
-      "CategoryName": "animal3",
+      "CategoryName": "www",
       "vocabs": [
         {
-          "word": "deer",
-          "meaning": "กวาง"
-        },
-        {
-          "word": "dog",
-          "meaning": "สุนัข"
-        },
-        {
-          "word": "donkey",
-          "meaning": "ลา"
-        },
-        {
-          "word": "dragonfly",
-          "meaning": "แมลงปอ"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "CategoryName": "animal4",
-      "vocabs": [
-        {
-          "word": "duck",
-          "meaning": "เป็ด"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "CategoryName": "verb2",
-      "vocabs": [
-        {
-          "word": "Like",
-          "meaning": "ชอบ "
-        },
-        {
-          "word": "See",
-          "meaning": "เห็น "
-        },
-        {
-          "word": "Need",
-          "meaning": "ต้องการ"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "CategoryName": "verb3",
-      "vocabs": [
-        {
-          "word": "Eat",
-          "meaning": "กิน"
-        },
-        {
-          "word": "Drink",
-          "meaning": "ดื่ม"
-        },
-        {
-          "word": "Teach",
-          "meaning": "สอน"
-        },
-        {
-          "word": "Watch",
-          "meaning": "ดู"
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "CategoryName": "33333",
-      "vocabs": [
-        {
-          "id": 81,
-          "word": "dwaw",
-          "meaning": "waa",
+          "id": 27,
+          "word": "www",
+          "meaning": "eee",
           "status": false
         },
         {
-          "id": 82,
-          "word": "wawad",
-          "meaning": "wa",
-          "status": false
-        },
-        {
-          "id": 83,
-          "word": "dwa",
-          "meaning": "wdaaw",
-          "status": false
-        },
-        {
-          "id": 84,
-          "word": "dwawa",
-          "meaning": "sadw",
-          "status": false
-        },
-        {
-          "id": 85,
-          "word": "dwawd",
-          "meaning": "dwa",
+          "id": 28,
+          "word": "eee",
+          "meaning": "www",
           "status": false
         }
       ]

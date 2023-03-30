@@ -28,8 +28,8 @@ const emit=defineEmits(['next','reset','menu'])
     </div>
 
 </div>
-<div v-if="finalMessage=='YON WIN!' && props.endgame==1">
-  <div class ="popup-container2 bg-gradient-to-r from-rose-400 to-orange-300 font-alfra" id="popup-container">
+<div v-if="finalMessage=='YON WIN!' && props.endgame==1" >
+  <div class ="popup-container2   bg-gradient-to-r  from-yellow-600 to-yellow-500 " id="popup-container">
     <div class="grid justify-center items-center">
       <h1 class="text-8xl mt-52 text-yellow-300 waviy">Game Clear</h1>
       <button class="rounded-2xl hover:cursor-pointer transition duration-150  active:scale-90 bg-white text-orange-400 py-3 px-3 mt-6" @click="$emit('menu')">Choose Category</button>
@@ -75,9 +75,6 @@ const emit=defineEmits(['next','reset','menu'])
   align-items: center;
   justify-content: center;
 }
-
-
-
 .popup button {
   cursor: pointer;
   background-color: #fff;
@@ -109,4 +106,9 @@ const emit=defineEmits(['next','reset','menu'])
     transform: translateY(-20px)
   }
 }
+
+
+
+
+
 </style>
