@@ -1,3 +1,4 @@
+
 <script setup>
 import {onMounted,ref,computed} from 'vue';
 import { getCategories } from '../composable/getCategories';
@@ -5,7 +6,7 @@ import { RouterLink } from 'vue-router';
 import game from '../components/HANGMANGAME/hangman.vue'
 import { playsound,colletSound,worngSound } from '../composable/sound';
 const cataForGame=ref([])
-const cataName = ref('')
+const cataname=ref("")
 const SelectedCata=ref([{word:"cat",meaning:"เเมว"},
     {word:"pooh",meaning:"ภู"},
     {word:"university",meaning:"มหาลัย"}])
@@ -29,7 +30,7 @@ function getCategory(cateid) {
    let game=cataForGame.value.find((x)=>x.id==cateid)
    try{
     SelectedCata.value=game.vocabs
-    cataName.value=game.CategoryName
+    cataname.value=game.CategoryName
    }
    catch{
     console.log("wait");
@@ -41,8 +42,14 @@ function getCategory(cateid) {
 playsound()
 }
 function randomquiz(){
-  let x=Math.floor(Math.random() * (cataForGame.value.length - 1 + 1) + 1)
-  getCategory(x)
+  
+  let listid=[]
+  cataForGame.value.forEach((x)=>{
+   listid.push(x.id)
+  })
+  let randomlist=Math.floor(Math.random() * (listid.length  + 0) + 0)
+  let  randomresult=listid[randomlist]
+  getCategory(randomresult)
   playsound()
   
 }
@@ -54,12 +61,12 @@ const filterSearch = computed(() => {
 });
 
 </script>
- 
+ <!-- mergeee to master dev  -->
 <template>
 <div class="w-screen  h-screen bg-gradient-to-b from-amber-900 to-black font-Comfortaa ">
   <div class="  m-auto relative top-10  border-4 border-amber-900 drop-shadow-lg   w-4/5 h-4/5    bg-gradient-to-r from-yellow-600 to-yellow-500  bg-cover"> 
     <div class="popup-container w-5/5 h-5/5 bg-gradient-to-r text-black font-extrabold from-yellow-600 to-yellow-500" v-show="open==1">
-        <game  @ending="closegame()" :cataName="cataName" :question="SelectedCata" :change="changgame" @chang="changdone()"/>
+        <game  @ending="closegame()" :question="SelectedCata" :change="changgame" @chang="changdone()" :name="cataname" />
     </div> 
   <div class=" " v-show="!open==1">
     <h1 class="flex justify-center items-center mt-10  text-5xl font-RampartOne  bg-gradient-to-br from-yellow-200  to-amber-300 py-5 text-black font-extrabold"> Choose category </h1>
@@ -68,7 +75,7 @@ const filterSearch = computed(() => {
 <div class=" flex overflow-x-auto  w-auto items-center mt-4 pb-20">
   <button class=" w-60 h-60  mx-2 my-2 rounded-2xl text-3xl shadow-black/40  text-white flex btn btn-active   bg-yellow-700 font-bold" @click="randomquiz()">Random</button>
 <div v-for="(cata,index) in filterSearch" class="">
-<button class=" w-60 h-60  mx-2 my-2 rounded-2xl text-3xl shadow-black/40  text-black flex btn btn-active   bg-orange-200 font-bold" @click="getCategory(cata.id)">{{ cata.CategoryName }}</button>
+<button class=" w-60 h-60  mx-2 my-2 rounded-2xl text-3xl shadow-black/40  text-black flex btn btn-active   bg-orange-200 font-bold hover:text-white" @click="getCategory(cata.id)">{{ cata.CategoryName }}</button>
 <!-- w-60 h-60  mx-2 my-2    mt-20 flex btn btn-active  text-3xl bg-orange-400 font-bold -->
 </div>
 <div class="bg-white"></div>
@@ -77,7 +84,7 @@ const filterSearch = computed(() => {
     </div>
   </div>
     <div class="w-full h-1/5 bg-WoodFloor">
-      <div class="w-full h-full bg-gradient-to-b from-black  to-black/50">
+      <div class="w-full h-full bg-gradient-to-b from-black  to-black/30">
     <RouterLink @click="playsound" to="/" class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto   text-amber-800 hover:text-white hover:bg-slate-800  text-3xl bg-yellow-400 font-bold">BACK TO MAIN MENU </RouterLink>
     </div>
    </div>
@@ -102,4 +109,5 @@ const filterSearch = computed(() => {
 input.placeholder {
     text-align: center;
 }
+
 </style>

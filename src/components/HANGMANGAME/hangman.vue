@@ -1,3 +1,4 @@
+
 <script setup>
 import { computed, initCustomFormatter, ref } from 'vue';
 import {game} from '../../composable/game.js'
@@ -11,11 +12,10 @@ import hint from "./components/hint.vue"
 import { playsound } from '../../composable/sound.js';
 
 const props = defineProps({
-    cataName:{type:String},
      question: { type:Array,  default:[]} ,
-     change: { type:Boolean,  default:false} 
+     change: { type:Boolean,  default:false}, 
+     name: { type:String,  default:"Hangman"}
 })
-const CataName = computed(()=>props.cataName)
 
 let count=ref(0)
 const allWord =  ref(props.question)
@@ -119,10 +119,10 @@ function playsoundS(para){
 
     <audio   src="losegame.mp3"   ref="losegame" type="audio/mpeg" ></audio>
     <audio   src="winrounds.mp3"   ref="winround" type="audio/mpeg" ></audio>
-    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
+    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-slate-900 hover:text-white hover:border-black hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
 
     <div class="-mt-11">
-        <Header :cataName="CataName"  class="mb-3" :wrongcount="wrongLetters.length"/>
+        <Header  class="mb-3" :wrongcount="wrongLetters.length" :name="props.name"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
         <div class="grid justify-center items-center">
         <Figure :wrongcount="wrongLetters.length"/>
@@ -138,3 +138,4 @@ function playsoundS(para){
 </template>
 <style scoped>
 </style>
+

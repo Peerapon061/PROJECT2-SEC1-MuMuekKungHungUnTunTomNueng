@@ -19,5 +19,11 @@ const playsound  =()=>{
         sound.play()
   }
 
+const clickButton = ()=>{
 
-  export {playsound,worngSound,colletSound}
+const sound = new Audio('clickButton.mp3')
+sound.play()
+
+}
+
+  export {playsound,worngSound,colletSound,clickButton}

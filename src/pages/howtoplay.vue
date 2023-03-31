@@ -48,6 +48,14 @@ import {playsound} from '../composable/sound.js'
       data-te-slide-to="2"
       class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
       aria-label="Slide 3"></button>
+
+
+      <button
+      type="button"
+      data-te-target="#carouselExampleCaptions"
+      data-te-slide-to="3"
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 4"></button>
   </div>
   <div
     class="  h-4/5 relative w-full overflow-hidden after:clear-both after:block after:content-['']">
@@ -57,7 +65,7 @@ import {playsound} from '../composable/sound.js'
       data-te-carousel-item
       style="backface-visibility : hidden: ">
       <img
-        src="../img/howtoplay/pic1.jpg"
+        src="../img/howtoplay/1.png"
         class="block  "
         alt="..." />
       <div
@@ -71,7 +79,7 @@ import {playsound} from '../composable/sound.js'
       data-te-carousel-item
       style="backface-visibility: hidden">
       <img
-        src="../img/howtoplay/pic2.jpg"
+        src="../img/howtoplay/2.png"
         class="block  "
         alt="..." />
       <div
@@ -84,7 +92,7 @@ import {playsound} from '../composable/sound.js'
       data-te-carousel-item
       style="backface-visibility: hidden">
       <img
-        src="../img/howtoplay/pic3.jpg"
+        src="../img/howtoplay/3.png"
         class="block w-full"
 
 
@@ -94,7 +102,29 @@ import {playsound} from '../composable/sound.js'
         <h5 class="text-5xl">STEP : 3</h5>
         
       </div>
+
+      
     </div>
+
+    <div
+      class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-item
+      style="backface-visibility: hidden">
+      <img
+        src="../img/howtoplay/4.png"
+        class="block w-full"
+
+
+        alt="..." />
+      <div
+        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-black md:block">
+        <h5 class="text-5xl">STEP : 4</h5>
+        
+      </div>
+
+      
+    </div>
+    
   </div>
   <button
     class="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
@@ -156,12 +186,12 @@ import {playsound} from '../composable/sound.js'
 
 
 
-    <div class="w-full h-1/5 bg-WoodFloor"><div class="w-full h-full bg-gradient-to-b from-black  to-black/50">
+    <div class="w-full h-1/5 bg-WoodFloor"><div class="w-full h-full bg-gradient-to-b from-black  to-black/30">
 
 
 
-      <RouterLink to="/"  @click ="playsound"  class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto    bg-yellow-400 text-3xl font-bold" >
-<button   class="   text-3xl text-black font-bold"> BACK TO MAIN MENU</button>
+      <RouterLink to="/"  @click ="playsound"  class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto    text-amber-800 hover:text-white hover:bg-slate-800   bg-yellow-400 font-bold" >
+<button   class="   text-3xl font-Comfortaa"> BACK TO MAIN MENU</button>
       </RouterLink>
 
     </div>
@@ -182,7 +212,5 @@ import {playsound} from '../composable/sound.js'
 </template>
  
 <style scoped>
-.img{
-  
-}
+
 </style>

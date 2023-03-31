@@ -1,6 +1,6 @@
 <script setup>
 import buttonletter from "./components/button.vue";
-import { playsound,worngSound,} from "../../../../composable/sound.js";
+import { playsound,worngSound,clickButton} from "../../../../composable/sound.js";
 import { ref, computed } from "vue";
 defineEmits(['press'])
 const keybordValue = ref([{ key: 'A', disable: 0, styleColor: 0 }, { key: 'B', disable: 0, styleColor: 0 }, { key: 'C', disable: 0, styleColor: 0 },
@@ -53,17 +53,17 @@ const ROW3=['Z','X','C','V','B','N','M']
     <div class="flex">
     <h1 class="hidden">{{ statusbutton }}</h1>
     <div v-for=" item in ROW1">
-         <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item);" :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
+         <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item); clickButton() " :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
     </div>
   </div>
   <div class="flex ml-8 mt-3">
     <div v-for=" item in ROW2">
-         <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item);" :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
+         <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item); clickButton() " :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
     </div>
   </div>
   <div class="flex ml-32 mt-3">
     <div v-for=" item in ROW3">
-         <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item);" :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
+         <buttonletter :lettterkey="item" @click="$emit('press',item);pressx(item); clickButton()" :statusdis="keybordValue.find((x)=>x.key===item).disable" :correct="correct(item)"/>
     </div>
   </div>
   </div>

@@ -1,5 +1,4 @@
 <script setup>
-import {playsound,worngSound} from '../composable/sound.js';
 defineEmits(['changPage','EditCategoryfunc','deleteCategory'])
 
 const props = defineProps({
@@ -43,10 +42,10 @@ const props = defineProps({
                  <button    :id=props.Category.id  ref="CategoryCard"  class="btn border-0 bg-amber-400 text-black" @click="$emit('changPage',$event,'show',index)" v-show="!EditCategory" 
                  :disabled="props.PageObject.show&&props.index===props.checknumber"
                  >View</button>
-                 <button :id= props.Category.id ref="CategoryCard" class="btn border-0 bg-amber-400 text-black" @click="$emit('EditCategoryfunc',props.index,$event)" v-show="!props.EditCategory">Delete</button>
+                 <button :id= props.Category.id ref="CategoryCard" class="btn border-0 btn-error text-black" @click="$emit('EditCategoryfunc',props.index,$event)" v-show="!props.EditCategory">Delete</button>
                  <div class="card-actions justify-end " v-show="props.checknumber===props.index">
                    <button :id= props.Category.id ref="CategoryCard"  class="btn border-0 bg-amber-400 text-black" @click="$emit('EditCategoryfunc',$event)" v-show="props.EditCategory">Cancel</button>
-                 <button :id= props.Category.id ref="CategoryCard"  class="btn border-0 bg-amber-400 text-black" @click=" $emit('deleteCategory',$event)" v-show="props.EditCategory">Confrim</button>
+                 <button :id= props.Category.id ref="CategoryCard"  class="btn border-0 bg-info text-black" @click=" $emit('deleteCategory',$event)" v-show="props.EditCategory">Confrim</button>
                 </div>
              </div>
            </div>

@@ -1,25 +1,121 @@
 {
   "Categoties": [
     {
-      "id": 5,
       "CategoryName": "Activity",
       "vocabs": [
         {
-          "id": 7,
-          "word": "exercise",
-          "meaning": "try",
-          "status": false
-        },
-        {
-          "id": 8,
+          "id": 318,
           "word": "reading",
           "meaning": "book",
           "status": false
         },
         {
-          "id": 9,
+          "id": 319,
           "word": "swimmimg",
           "meaning": "water",
+          "status": false
+        }
+      ],
+      "id": 5
+    },
+    {
+      "CategoryName": "Animal-1",
+      "vocabs": [
+        {
+          "id": 3,
+          "word": "mokey",
+          "meaning": "ลิงกัง",
+          "status": false
+        },
+        {
+          "id": 4,
+          "word": "dog",
+          "meaning": "สุนัข",
+          "status": false
+        }
+      ],
+      "id": 4
+    },
+    {
+      "CategoryName": "member",
+      "vocabs": [
+        {
+          "id": 200,
+          "word": "nutnon",
+          "meaning": "นัทนนท์",
+          "status": false
+        },
+        {
+          "id": 201,
+          "word": "pin",
+          "meaning": "พิณ",
+          "status": false
+        },
+        {
+          "id": 202,
+          "word": "seum",
+          "meaning": "เซียม",
+          "status": false
+        },
+        {
+          "id": 203,
+          "word": "pee",
+          "meaning": "พี",
+          "status": false
+        }
+      ],
+      "id": 6
+    },
+    {
+      "CategoryName": "dd",
+      "vocabs": [
+        {
+          "id": 10,
+          "word": "r3w",
+          "meaning": "rw",
+          "status": false
+        },
+        {
+          "id": 11,
+          "word": "wa",
+          "meaning": "wa",
+          "status": false
+        }
+      ],
+      "id": 7
+    },
+    {
+      "CategoryName": "dwa",
+      "vocabs": [
+        {
+          "id": 35,
+          "word": "dwas",
+          "meaning": "dd",
+          "status": false
+        },
+        {
+          "id": 36,
+          "word": "wasa",
+          "meaning": "dwa",
+          "status": false
+        }
+      ],
+      "id": 11
+    },
+    {
+      "id": 9,
+      "CategoryName": "dw",
+      "vocabs": [
+        {
+          "id": 73,
+          "word": "daw",
+          "meaning": "dwa",
+          "status": false
+        },
+        {
+          "id": 74,
+          "word": "dwas",
+          "meaning": "s",
           "status": false
         }
       ]
