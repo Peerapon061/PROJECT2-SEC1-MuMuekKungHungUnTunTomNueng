@@ -68,10 +68,10 @@ import {playsound} from '../composable/sound.js'
         src="../img/howtoplay/1.png"
         class="block  "
         alt="..." />
-      <div
-        class="absolute inset-x-[15%] bottom-5 py-5 text-center text-black md:block">
+        <div
+        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-white bg-black/25">
+        <h5 class="text-3xl font-Comfortaa">STEP 1 : Add your words</h5>
         
-
       </div>
     </div>
     <div
@@ -82,8 +82,9 @@ import {playsound} from '../composable/sound.js'
         src="../img/howtoplay/2.png"
         class="block  "
         alt="..." />
-      <div
-        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-black md:block">
+        <div
+        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-white bg-black/25">
+        <h5 class="text-3xl font-Comfortaa">STEP 2 : Create your category</h5>
         
       </div>
     </div>
@@ -97,9 +98,9 @@ import {playsound} from '../composable/sound.js'
 
 
         alt="..." />
-      <div
-        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-black md:block">
-        <h5 class="text-5xl">STEP : 3</h5>
+        <div
+        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-white bg-black/25">
+        <h5 class="text-3xl font-Comfortaa">STEP 3 : Choose your category</h5>
         
       </div>
 
@@ -117,8 +118,8 @@ import {playsound} from '../composable/sound.js'
 
         alt="..." />
       <div
-        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-black md:block">
-        <h5 class="text-5xl">STEP : 4</h5>
+        class="absolute inset-x-[15%] bottom-5  py-5 text-center text-white bg-black/25">
+        <h5 class="text-3xl font-Comfortaa">STEP 4 : Play Hangman</h5>
         
       </div>
 
@@ -191,7 +192,7 @@ import {playsound} from '../composable/sound.js'
 
 
       <RouterLink to="/"  @click ="playsound"  class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto    bg-yellow-400 text-3xl font-bold" >
-<button   class="   text-3xl text-black font-bold"> BACK TO MAIN MENU</button>
+<button   class="   text-3xl text-black font-bold font-Comfortaa"> BACK TO MAIN MENU</button>
       </RouterLink>
 
     </div>

@@ -134,7 +134,7 @@ function playsoundS(para){
         <div class="flex justify-center items-center" :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']">
         <Word :letters="letters" :correct-letters="correctLetters"  />
         </div>
-        <div :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']">
+        <div :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']" class="-mt-2">
         <keyboard  @press="clickKd($event)" :wordques="word" :statuscode="resetkb"  />      
     </div>               
     <Pop :status="status " :word="word" @reset ="reset()" @next="next()" :endgame="endgame" @menu="closegame()"/>
