@@ -41,6 +41,7 @@ const wrongLetters = computed(() =>
 const correctLetters = computed(() =>
     guessedLetters.value.filter((l) => letters.value.includes(l))
 );
+let noQuestion=ref(0)
 const status = computed(()=>
 {
     if(wrongLetters.value.length === 6) {
@@ -50,19 +51,23 @@ const status = computed(()=>
     }
 
     if(letters.value.every(l => correctLetters.value.includes(l))){
+        ++noQuestion
+        console.log(noQuestion)
+        console.log(mygamelist.value.length)
         playsoundS()
-        return 'win'}
+        return 'win'
+    }
     
     else return ''
 })
 const reset = () => {
     guessedLetters.value =[]
     count.value=0
+    noQuestion=0
     mygamelist.value=mygame.value.createdgame()
     word.value = allWord.value[mygamelist.value[0]].word
     resetkb.value++
     endgame.value=0
-    playsound()
 }
 
 const next = () => {
@@ -121,7 +126,7 @@ function playsoundS(para){
     <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
 
     <div class="-mt-11">
-        <Header  class="mb-3" :wrongcount="wrongLetters.length" :name="props.name"/>
+        <Header  class="mb-3" :wrongcount="wrongLetters.length" :CountWord="noQuestion" :AllWordNo="mygamelist.length" :name="props.name"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
         <div class="grid justify-center items-center">
         <Figure :wrongcount="wrongLetters.length"/>
