@@ -67,26 +67,41 @@ const EditCategoryfunc= (i) =>{
   }
 const addVocab = () => {
   //เชคว่าชื่อไม่ซ้ำ
-    if(TemporaryGroupVocabs.value.every(x=>x.word !== TemporaryVocab.value.word) && TemporaryVocab.value.word.length>0 && TemporaryVocab.value.meaning.length>0 && isNaN(TemporaryVocab.value.word)){
-    
-   
+  let vocabs = TemporaryVocab.value.word.split('')
+    if(TemporaryGroupVocabs.value.some(x=>x.word === TemporaryVocab.value.word)  ){
+      TemporaryVocab.value={word:'',meaning:''}
+      ErrorModification('Cannot add duplicate word')
+    }
+      
+    else if(TemporaryVocab.value.word.length<=0 || TemporaryVocab.value.meaning.length<=0){
+      TemporaryVocab.value={word:'',meaning:''}
+      ErrorModification('Please enter your word and meaning')
+    }
+    else if(!vocabs.every(x=> isNaN(x) )){
+        
 
+        TemporaryVocab.value={word:'',meaning:''}
+        ErrorModification('Cannot add number in your word ')
+      
+      }
+      else{
   
       TemporaryGroupVocabs.value.push(new myword(TemporaryVocab.value.word.toLocaleLowerCase().trim(),TemporaryVocab.value.meaning ))
       
   
         TemporaryVocab.value={word:'',meaning:''}
         colletSound()
-    }
-    else{
-      if (!isNaN(TemporaryVocab.value.word)) {
-        ErrorModification('Cannot add number')
-      }
-      else{
-        ErrorModification('Cannot add duplicate vocab')
       }
     }
-}
+    // else{
+    //   if (!isNaN(TemporaryVocab.value.word)) {
+    //     ErrorModification('Cannot add number')
+    //   }
+    //   else{
+    //     ErrorModification('Cannot add duplicate vocab')
+    //   }
+    // }
+
 // กด ปุ่ม close ตอน add vocab
 const clear = () =>{
     TemporaryVocab.value={word:'',meaning:''}
@@ -154,7 +169,7 @@ const deleteCategory =async (event)=>{
         alert.value=false
         alert_complete.value=false
         msg_complete.value=""
-        }, "2300")
+        }, "2000")
     } else throw new error("Error, cannot delete data!");
   } catch (error) {
     console.error(error);
@@ -194,7 +209,7 @@ const AddCategory =async (event)=>{
       alert.value=false
       alert_complete.value=false
       msg_complete.value=""
-      }, "2300")
+      }, "2000")
       colletSound()
     } else {
       throw new error("Error, cannot delete data!");}

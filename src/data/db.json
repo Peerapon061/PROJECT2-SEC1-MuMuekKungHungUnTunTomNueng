@@ -17,6 +17,48 @@
         }
       ],
       "id": 1
+    },
+    {
+      "id": 2,
+      "CategoryName": "dwa",
+      "vocabs": [
+        {
+          "id": 3,
+          "word": "dwa",
+          "meaning": "wwww",
+          "status": false
+        },
+        {
+          "id": 4,
+          "word": "pind",
+          "meaning": "wda",
+          "status": false
+        },
+        {
+          "id": 5,
+          "word": "dwadd",
+          "meaning": "dwadd",
+          "status": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "CategoryName": "pat",
+      "vocabs": [
+        {
+          "id": 18,
+          "word": "pin",
+          "meaning": "pin",
+          "status": false
+        },
+        {
+          "id": 19,
+          "word": "pat",
+          "meaning": "pat",
+          "status": false
+        }
+      ]
     }
   ]
 }

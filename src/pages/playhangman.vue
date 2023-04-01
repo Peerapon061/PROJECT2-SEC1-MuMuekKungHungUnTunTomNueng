@@ -71,7 +71,7 @@ const filterSearch = computed(() => {
   <div class=" " v-show="!open==1">
     <h1 class="flex justify-center items-center mt-10  text-5xl font-RampartOne  bg-gradient-to-br from-yellow-200  to-amber-300 py-5 text-black font-extrabold"> Choose category </h1>
     <div class="flex justify-center mx-auto items-center w-3/5  h-12 mt-5 text-lg  font-extrabold  text-amber-900">--- Click on a category to play hangman ---</div>  
-    <div class="flex justify-center items-center w-full h-12 mt-5 "><input type="text" placeholder=" Search.." class="rounded-xl h-10 w-full bg-gray-200 mx-64 input-bordered input-warning pl-10" v-model.trim="searchKeyword"></div>  
+    <div class="flex justify-center items-center w-full h-12 mt-5 "><input type="text" placeholder=" Search Category ..." class="rounded-xl h-10 w-full bg-gray-200 mx-64 text-slate-700 font-semibold input-bordered input-warning pl-10" v-model.trim="searchKeyword"></div>  
 <div class=" flex overflow-x-auto  w-auto items-center mt-4 pb-20">
   <button class=" w-60 h-60  mx-2 my-2 rounded-2xl text-3xl shadow-black/40  text-white flex btn btn-active   bg-yellow-700 font-bold" @click="randomquiz()">Random</button>
 <div v-for="(cata,index) in filterSearch" class="">
