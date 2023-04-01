@@ -1,29 +1,41 @@
 # project2-sec1-mumuekkunghunguntuntomnueng
 
-This template should help get you started developing with Vue 3 in Vite.
+# เเอพพลิเคชั่นช่วยจำคำศัพท์ Remwords
 
-## Recommended IDE Setup
+ผู้จัดทำ <br>
+641305000021  ณัฐณิชา สิรินิพัทธ์กุล   role Dev,design (27.5%)<br>
+641305000022  ณัฐนนท์ ตั้งจินตวิวัฒน์  role Dev,projectmanager (27.5%)<br>
+641305000041  นายนราวิชญ์ โพธิวัฒน  role Dev,infra (25%)<br>
+641305000061  นายพีระพล ศรีวิชชุพงษ์ role Dev,infra (25%)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## ฟีเจอร์ความสามารถของแอปพลิเคชัน
+-จำคำศัพท์และคำใบ้จาก input ของ user
+-สร้างและจัดหมวดหมู่ของคำศัพท์
+-เกม hangman
 
-## Customize configuration
+## คู่มือการใช้งานแอปพลิเคชัน
+1.ใส่คำศัพท์และความหมาย
+2.สร้างหมวดหมู่ของคำศัพท์ต่างๆ
+3.เลือกหมวดหมู่มาเพื่อเล่นเกม hangman
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## แรงบันดาลใจที่นำมาใช้ในการพัฒนาแอปพลิเคชัน
+ได้รับแรงบันดาลใจมาจากกลุ่มของเรามีคนที่ไม่เก่งภาษาอังกฤษและความรู้เรื่องภาษาอังกฤษเองก็มีผลกับชีวิตประจำวันของเราอย่างมาก ซึ่งแอพที่เราสร้างก็จะมาช่วยคนการฝึกให้ผู้ใช้จำคำศัพท์
+ผ่านเกมที่เราสร้างและสามารถช่วยจดจำคำศัพท์ที่ผู้ใช้ต้องการฝึกจำได้อีกด้วย
 
-## Project Setup
+## สรุปการทำงานในแต่ละ Week
 
-```sh
-npm install
-```
+### week 1 
+เราได้ทำการนำโปรเจคเก่ามาปรับปรุงและพัฒนาเป็นเกม hangman
 
-### Compile and Hot-Reload for Development
+### week 2 
+เรานำโปรเจคที่ปรับปรุงแล้วมาจัดการทำ component
 
-```sh
-npm run dev
-```
+### week 3 
+ได้จัดทำระบบต่างๆ-ของโปรเเกรม 
 
-### Compile and Minify for Production
+### week 4
+วีคนี้ได้มีการจัดระบบ ui ให้มีความเป็นระเบียบมากขึ้น
 
-```sh
-npm run build
-```
+### week 5
+วีคนี้เราจัดระเบียบโค้ดให้มีความง่ายต่อการพัฒนาและทำการสร้าง diagram
+Diagram : https://www.canva.com/design/DAFerzCwpqI/j2SO_YUS4j0-Llfti8mVsQ/edit?utm_content=DAFerzCwpqI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
