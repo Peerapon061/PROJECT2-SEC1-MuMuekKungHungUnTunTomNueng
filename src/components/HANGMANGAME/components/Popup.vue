@@ -1,7 +1,6 @@
 <script setup>
             import {computed} from 'vue'
             import '../../../assets/style.css'
-            import { playsound } from '../../../composable/sound';
             const props = defineProps({
               status: { type:String,  default: ''} ,
                  word:{type:String, default :''} ,

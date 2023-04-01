@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import Iconsong from '../components/song/Iconsong.vue';
 import {playsound,worngSound} from '../composable/sound.js'
 </script>
  

@@ -1,6 +1,6 @@
 <script setup>
 import buttonletter from "./components/button.vue";
-import { playsound,worngSound,clickButton} from "../../../../composable/sound.js";
+import {clickButton} from "../../../../composable/sound.js";
 import { ref, computed } from "vue";
 defineEmits(['press'])
 const keybordValue = ref([{ key: 'A', disable: 0, styleColor: 0 }, { key: 'B', disable: 0, styleColor: 0 }, { key: 'C', disable: 0, styleColor: 0 },

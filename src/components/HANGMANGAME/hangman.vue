@@ -1,7 +1,7 @@
 
 
 <script setup>
-import { computed, initCustomFormatter, ref } from 'vue';
+import { computed, ref } from 'vue';
 import {game} from '../../composable/game.js'
 import '../../assets/style.css';
 import Header from "./components/Header.vue";

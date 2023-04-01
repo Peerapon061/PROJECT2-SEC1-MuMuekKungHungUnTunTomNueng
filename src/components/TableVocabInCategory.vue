@@ -1,11 +1,7 @@
 <script setup>
-import { ref , onMounted,onUpdated,onBeforeUnmount,computed} from 'vue'
+import {computed} from 'vue'
 import { pagination } from '../composable/pagination'
-import { playsound,worngSound,colletSound } from '../composable/sound.js';
-
-//ยังไงก็ต้องเอา pagination มาวนในนี้ให้ได้ 
-//แก้ ให้แก้ไขชื่อ catagory ได้
-// const EditObjectShowPage = ref([]) ;
+import { playsound,colletSound } from '../composable/sound.js';
 
 const emits = defineEmits(["editvocab","deletevocab","error"])
 const props = defineProps({
@@ -27,7 +23,6 @@ let EditAllObject =computed(()=>{
   }
   
 })
-// let previousNameCategory 
 const EditObjectShowPage = computed(()=>{
   if(props.ObjectCategoryClicked!==undefined){
     

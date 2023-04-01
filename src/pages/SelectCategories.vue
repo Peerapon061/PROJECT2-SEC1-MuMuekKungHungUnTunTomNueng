@@ -7,9 +7,7 @@ import tabpagination from '../components/tabpagination.vue';
 import {playsound,worngSound,colletSound} from '../composable/sound.js'
 
 import TableVocabInCategory from '../components/TableVocabInCategory.vue';
-import Iconsong from '../components/song/Iconsong.vue';
 
-// แยกคอมโพเนน ของหน้าที่เปลี่ยนได้
 onBeforeMount(async ()=>{
   let categories = await getCategories()
  let Vocabs = []
@@ -25,7 +23,7 @@ onBeforeMount(async ()=>{
 const TemporaryName = ref("")
 const TemporaryGroupVocabs =ref([]) 
 const CategoryAll = ref([])
-const TemporaryVocab=ref({word:'',meaning:''}) // สำหรับ ตอน add 
+const TemporaryVocab=ref({word:'',meaning:''})
 const EditCategory = ref(false) //
 const alert = ref(false)
 const alert_complete = ref(false)
@@ -50,9 +48,6 @@ const closealert=()=>{
 //เช็คว่ากดของปุ่มไหน
 let checknumber=ref()
 const page = ref({add:true, show:false})
-// const TemporaryShow = computed(()=>{
-//return pagination(TempObjTarget,changPage)
-// })
 const idCategory =ref(1)
 let TempObjTarget =computed(()=>{  
   return CategoryAll.value.find(x=>x.id == idCategory.value)
@@ -101,7 +96,6 @@ const deleteVocab = (event) =>{
 
 
 const returnPage = (page) =>{
-  // TemporaryShow.value['vocabs'] =pagination(TempObjTarget.vocabs,page)
   countPage.value = page
   }
 
@@ -124,7 +118,6 @@ const  changPage=(event,value,i)=>{
      }
    
     
-      // if (typeof i === undefined) 
       else{
         page.value['add']=true
         page.value['show']=false
