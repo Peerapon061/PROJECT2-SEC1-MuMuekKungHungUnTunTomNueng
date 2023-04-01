@@ -345,14 +345,15 @@ try {
         <div class="flex w-3/5 rounded-2xl bg-amber-200/10 font-extrabold mx-auto  justify-center mb-5 ">
         <h1 class="text-4xl flex items-center justify-center mb-3 font-RampartOne ">Create Your Category </h1>
       </div>
-        <div class="flex w-full h-1/6 space-x-3 justify-center">  
+        <div class="flex w-full h-20 space-x-3 justify-center">  
           <div class="grid h-12">
         <h1 class="text-xl">Category Name : </h1> 
         <label class="text-sm">Between 2-15 characters</label> 
       </div>  
             <input v-model.trim="TemporaryName" type="text" placeholder="Type here" class="input  dark:text-white input-bordered w-full max-w-xs" />
         </div>
-        <div class="flex space-x-3 w-full  h-1/6 justify-center"> 
+        <div class="w-full flex justify-center text-xl font-bold text-rose-800  h-12 "><span v-show="TemporaryGroupVocabs.length<2">-- Please enter more than 2 words. --</span></div>
+        <div class="flex space-x-3 w-full  h-24 justify-center"> 
         <!-- ปุ่ม หน้า add -->
 
 
@@ -361,10 +362,10 @@ try {
          </div>
          
 
-         <div class="flex flex-col m-auto w-11/12 h-[23rem] rounded-lg overflow-auto bg-slate-400"> 
+         <div class="flex flex-col m-auto w-11/12 h-[20rem] rounded-lg overflow-auto bg-slate-400"> 
             <div >
 
-<div class="overflow-y-auto h-[23rem] ">
+<div class="overflow-y-auto h-[20rem] ">
                 <!-- ตาราง หน้า add vocab -->
   <table class="table w-full    dark:text-white h-9">
     <!-- head -->
