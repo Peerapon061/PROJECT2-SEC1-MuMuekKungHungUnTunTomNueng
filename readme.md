@@ -1,6 +1,6 @@
 # project2-sec1-MuMuekKungHungUnTunTomNueng
 
-# เเอพพลิเคชั่นช่วยจำคำศัพท์ Remwords
+# เเอพพลิเคชั่น Hangman
 
 ผู้จัดทำ <br>
 641305000021  ณัฐณิชา สิรินิพัทธ์กุล   role Dev,Software Tester (27.5%)<br>
