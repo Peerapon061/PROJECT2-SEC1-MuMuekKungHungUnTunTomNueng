@@ -80,7 +80,7 @@ const addVocab = () => {
     }
     else{
       if (!isNaN(TemporaryVocab.value.word)) {
-        ErrorModification('Cannot add number vocab')
+        ErrorModification('Cannot add number')
       }
       else{
         ErrorModification('Cannot add duplicate vocab')
