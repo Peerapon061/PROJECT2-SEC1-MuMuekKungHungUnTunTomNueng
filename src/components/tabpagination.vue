@@ -16,7 +16,7 @@ const props = defineProps({
 const showPagination =(direction)=>{
 
  if(direction === 'right'){
-    console.log(props.TempObjTargetLength.vocabs.length);
+  
 
    if(countPageRef.value < Math.ceil(props.TempObjTargetLength.vocabs.length/4)){
      countPageRef.value++

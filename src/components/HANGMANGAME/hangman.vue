@@ -1,3 +1,5 @@
+
+
 <script setup>
 import { computed, initCustomFormatter, ref } from 'vue';
 import {game} from '../../composable/game.js'
@@ -18,7 +20,7 @@ const props = defineProps({
 
 let count=ref(0)
 const allWord =  ref(props.question)
-
+let noQuestion=ref(0)
 const clickKd =(event)=>{
            const letter = event.toLowerCase()
          guessedLetters.value.push(letter);        
@@ -41,7 +43,6 @@ const wrongLetters = computed(() =>
 const correctLetters = computed(() =>
     guessedLetters.value.filter((l) => letters.value.includes(l))
 );
-let noQuestion=ref(0)
 const status = computed(()=>
 {
     if(wrongLetters.value.length === 6) {
@@ -52,8 +53,7 @@ const status = computed(()=>
 
     if(letters.value.every(l => correctLetters.value.includes(l))){
         ++noQuestion
-        console.log(noQuestion)
-        console.log(mygamelist.value.length)
+        
         playsoundS()
         return 'win'
     }
@@ -63,11 +63,11 @@ const status = computed(()=>
 const reset = () => {
     guessedLetters.value =[]
     count.value=0
-    noQuestion=0
     mygamelist.value=mygame.value.createdgame()
     word.value = allWord.value[mygamelist.value[0]].word
     resetkb.value++
     endgame.value=0
+    playsound()
 }
 
 const next = () => {
@@ -123,10 +123,10 @@ function playsoundS(para){
 
     <audio   src="losegame.mp3"   ref="losegame" type="audio/mpeg" ></audio>
     <audio   src="winrounds.mp3"   ref="winround" type="audio/mpeg" ></audio>
-    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-amber-500 hover:text-white hover:border-amber-200  hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
+    <button @click="closegame()" class="text-blue-300 border-2 bg-white rounded-lg  px-1 py-1 my-2 mx-2 hover:bg-slate-900 hover:text-white hover:border-black hover:cursor-pointer transition duration-150  active:scale-90">Back To Select Category</button>
 
     <div class="-mt-11">
-        <Header  class="mb-3" :wrongcount="wrongLetters.length" :CountWord="noQuestion" :AllWordNo="mygamelist.length" :name="props.name"/>
+        <Header  class="mb-3" :wrongcount="wrongLetters.length" :name="props.name"  :CountWord="noQuestion" :AllWordNo="mygamelist.length"/>
         <div ><hint :hint="getmean" :wrongcount="wrongLetters.length"/></div>
         <div class="grid justify-center items-center">
         <Figure :wrongcount="wrongLetters.length"/>
@@ -134,7 +134,7 @@ function playsoundS(para){
         <div class="flex justify-center items-center" :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']">
         <Word :letters="letters" :correct-letters="correctLetters"  />
         </div>
-        <div :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']" class="-mt-2">
+        <div :class="[status=='win'?'hidden':'',status=='lost'?'hidden':'']">
         <keyboard  @press="clickKd($event)" :wordques="word" :statuscode="resetkb"  />      
     </div>               
     <Pop :status="status " :word="word" @reset ="reset()" @next="next()" :endgame="endgame" @menu="closegame()"/>
@@ -142,3 +142,5 @@ function playsoundS(para){
 </template>
 <style scoped>
 </style>
+
+>>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c

@@ -74,13 +74,10 @@ const addVocab = () => {
   //เชคว่าชื่อไม่ซ้ำ
     if(TemporaryGroupVocabs.value.every(x=>x.word !== TemporaryVocab.value.word) && TemporaryVocab.value.word.length>0 && TemporaryVocab.value.meaning.length>0 ){
     
-    let TemporaryVocabtest = TemporaryVocab.value.meaning.trim()
    
-       if(TemporaryVocabtest.includes(" ")){
-        TemporaryVocabtest =TemporaryVocabtest.replace(/\s/gi,",")
-       }
+
   
-      TemporaryGroupVocabs.value.push(new myword(TemporaryVocab.value.word.toLocaleLowerCase(),TemporaryVocabtest ))
+      TemporaryGroupVocabs.value.push(new myword(TemporaryVocab.value.word.toLocaleLowerCase().trim(),TemporaryVocab.value.meaning ))
       
   
         TemporaryVocab.value={word:'',meaning:''}
@@ -107,15 +104,13 @@ const returnPage = (page) =>{
   countPage.value = page
   }
 
-// const showCategory =(id)=>{
+const ErrorModification = (msg) =>{
+         alert.value=true
+        alert_error.value=true
+        msg_error.value=msg
   
-//   //หาตามไอดีที่กด
-//   idCategory = idgit 
- 
-// //   TemporaryShow.value['categoryName'] = TempObjTarget.CategoryName
-// //  TemporaryShow.value['vocabs'] = pagination(TempObjTarget.vocabs)
- 
-// }
+        worngSound()
+}
 
 //category 
 //กดดูภายใน category
@@ -166,13 +161,15 @@ const deleteCategory =async (event)=>{
   EditCategoryfunc()
   if (page.value['show']) {
     changPage(event)
-    console.log("can change")
+
    
   }
 
   colletSound()
   
 }
+
+
 const AddCategory =async (event)=>{
   
   countId ++ 
@@ -216,7 +213,7 @@ const AddCategory =async (event)=>{
       alert.value=true
       alert_error.value=true
       job.value="create"
-      msg_error.value="Need manyword or this category name already exists"
+      msg_error.value="Your words must have at least 2 or this category name already exists"
       worngSound()
     }
 
@@ -241,7 +238,7 @@ const EditCategoryName=(option)=>{
         toggleEditNameCategory()
       }
       else{
-        alert('please, typing Category Name')
+        worngSound()
       }
   }
   else{
@@ -276,7 +273,7 @@ try {
             CategoryAll.value = CategoryAll.value.map((Category) => {
                 if (Category.id === modifyCategory.id) {
                   // Category.id = EditObj.id
-                  // Category.CategoryName = EditObj.CategoryName
+                  Category.CategoryName = EditObj.CategoryName
                   Category.vocabs  = modifyCategory.vocabs
                   
                   return Category
@@ -330,13 +327,15 @@ try {
     <div class=" w-4/6 h-5/6 space-y-5 mb-20 flex flex-col p-4  pt-4  mx-auto   border-4 rounded-lg border-amber-900 bg-gradient-to-r from-red-50000 via-yellow-600 to-yellow-500 relative " >
       
       <div class="w-full h-full flex flex-col  " v-show="page.add && !alert" >
-        <h1 class="text-4xl flex items-center justify-center mb-3">Create catagory </h1>
+        <div class="flex w-3/5 rounded-2xl bg-amber-200/10 font-extrabold mx-auto  justify-center mb-5 ">
+        <h1 class="text-4xl flex items-center justify-center mb-3 font-RampartOne ">Create Your Category </h1>
+      </div>
         <div class="flex w-full h-1/6 space-x-3 justify-center">  
           <div class="grid h-12">
         <h1 class="text-xl">Category Name : </h1> 
         <label class="text-sm">Between 2-15 characters</label> 
       </div>  
-            <input v-model="TemporaryName" type="text" placeholder="Type here" class="input  dark:text-white input-bordered w-full max-w-xs" />
+            <input v-model.trim="TemporaryName" type="text" placeholder="Type here" class="input  dark:text-white input-bordered w-full max-w-xs" />
         </div>
         <div class="flex space-x-3 w-full  h-1/6 justify-center"> 
         <!-- ปุ่ม หน้า add -->
@@ -356,10 +355,10 @@ try {
     <!-- head -->
     <thead class="sticky top-0 dark:bg-black dark:text-white">
       <tr>
-        <th >No.</th>
-        <th>Vocabulary</th>
-        <th colspan="3">Hint</th>
-        <th >Edit</th>
+        <th class="text-xl">No.</th>
+        <th class="text-xl">Vocabulary</th>
+        <th colspan="3" class="text-xl">Hint</th>
+        <th class="text-xl">Edit</th>
       
       </tr>
     </thead>
@@ -374,7 +373,7 @@ try {
             {{ Vocab.meaning}}
           </div>
         </td>
-        <td><span :id=Vocab.word @click="deleteVocab"> X </span></td>
+        <td><span :id=Vocab.word @click="deleteVocab" class="text-3xl text-red-700 font-extrabold"> X </span></td>
       </tr>
     
 
@@ -387,43 +386,43 @@ try {
  <!-- Modal แอดคำศัพท์ -->
 <input type="checkbox" id="my-modal" class="modal-toggle" />
 <div class="modal">
-  <div class="modal-box flex flex-col space-y-2 border-4 text-black  border-amber-800 bg-amber-200">
-    <h3 class="font-bold text-lg">Your vocabulary </h3>
+  <div class="modal-box flex flex-col space-y-2 border-4 text-black font-extrabold  border-amber-800 bg-amber-200">
+    <h3 class="font-bold text-2xl">Your Vocabulary </h3>
     <div class="flex w-full h-1/6 space-x-3 justify-center">   
-            <label for="NameCategory">vocabulary</label> 
-            <input type="text" v-model="TemporaryVocab.word" placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs bg-slate-600" />
+            <label for="NameCategory ">Vocabulary</label> 
+            <input type="text" v-model.trim="TemporaryVocab.word" placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs bg-slate-600" />
         </div>
         <div class="flex w-full h-1/6 space-x-3 justify-center">   
             <label for="NameCategory">Hint</label> 
-            <input type="text"  v-model="TemporaryVocab.meaning"  placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs bg-slate-600" />
+            <input type="text"  v-model.trim="TemporaryVocab.meaning"  placeholder="Type here" class="input text-white  input-bordered w-full max-w-xs bg-slate-600" />
         </div>
     <div class="modal-action flex">
-      <label  for="my-modal" class="btn" @click="clear">Close</label>
-      <label for="my-modal" class="btn" @click="addVocab">Add</label>
+      <label  for="my-modal" class="btn border-amber-100 bg-amber-500 text-white hover:bg-black" @click="clear" >Close</label>
+      <label for="my-modal" class="btn border-amber-100 bg-amber-500 text-white hover:bg-black" @click="addVocab">Add</label>
     </div>
   </div>
 </div>
          </div>
         </div> 
-        <div class="w-full  h-full flex flex-col overflow-auto space-y-5  " v-show="page.show" >
+        <div class="w-full  h-full flex flex-col overflow-auto space-y-5  " v-show="page.show && !alert_error"  >
         
           <!-- ส่วนแก้ไขชื่อ Category-->
          
           
           <!-- -->
-          <div class="flex w-full "> 
+          <div class="flex w-full " > 
             
-            <button @click="changPage"
-            class="w-fit  bg-lime-500 left-11 relative hover:bg-lime-700 text-white font-bold py-2 px-4  rounded-full"
-            >
-            <img src="../img/plus.png" class="w-12 h-12 hover:w-22 hover:h-22" >
+            <button @click="changPage" 
+            class="w-35 flex  h-20 py-4   space-x-3 bg-lime-500 left-11 relative border-4 border-black/20    hover:bg-lime-700 text-white font-bold px-4  rounded-2xl"
+            >  <span class="text-white pt-2" > Add Category  </span> 
+            <span class="text-5xl  ">+</span>
             </button>
-            <div class="flex justify-center space-x-9 pt-5 bg-amber-100 w-3/5 h-20 mx-auto text-5xl  text-zinc-900 rounded-2xl text-center ">    
+            <div class="flex justify-center space-x-9 pt-5 bg-amber-100 w-3/5 h-20  mx-20 text-5xl  text-zinc-900 rounded-2xl text-center ">    
             <span v-show="!StatusEditcata" >
             {{TempObjTarget?.CategoryName}}
            </span>
           
-           <input type="text"  v-model="newcategoryName" v-show="StatusEditcata" placeholder="Type here" class="w-4/5 input input-bordered  max-w-xs">
+           <input type="text"  v-model.trim="newcategoryName" v-show="StatusEditcata" placeholder="Type here" class=" text-center text-white text-xl w-4/5 input input-bordered  max-w-xs">
            
            <img v-show="!StatusEditcata" @click="toggleEditNameCategory"  src="../img/edit.png" class="relative  my-2 p w-10 h-10 hover:w-12 hover:h-12 ">
            <div class="flex space-x-3" v-show="StatusEditcata"> 
@@ -434,7 +433,7 @@ try {
           </div>
     
                   <div class="w-full  h-4/6 overflow-auto ">
-          <TableVocabInCategory  :countPages="countPage" :ObjectCategoryClicked="TempObjTarget" @editvocab="modifyVocabInCategory" />
+          <TableVocabInCategory  :countPages="countPage" :ObjectCategoryClicked="TempObjTarget" @editvocab="modifyVocabInCategory" @error="ErrorModification" />
         </div>
     
         <tabpagination :countPages="countPage" :TempObjTargetLength="TempObjTarget"  @returnPage="returnPage" />

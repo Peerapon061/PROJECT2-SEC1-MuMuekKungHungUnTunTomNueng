@@ -187,12 +187,15 @@ import {playsound} from '../composable/sound.js'
 
 
 
-    <div class="w-full h-1/5 bg-WoodFloor"><div class="w-full h-full bg-gradient-to-b from-black  to-black/50">
+    <div class="w-full h-1/5 bg-WoodFloor"><div class="w-full h-full bg-gradient-to-b from-black  to-black/30">
 
 
 
-      <RouterLink to="/"  @click ="playsound"  class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto    bg-yellow-400 text-3xl font-bold" >
-<button   class="   text-3xl text-black font-bold font-Comfortaa"> BACK TO MAIN MENU</button>
+
+
+      <RouterLink to="/"  @click ="playsound"  class=" mt-20 flex btn btn-active w-2/6 h-2/5 mx-auto    text-amber-800 hover:text-white hover:bg-slate-800   bg-yellow-400 font-bold" >
+<button   class="   text-3xl font-Comfortaa"> BACK TO MAIN MENU</button>
+
       </RouterLink>
 
     </div>
