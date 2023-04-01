@@ -5,9 +5,7 @@ import {myword} from '../class/myword.js'
 import Card from '../components/Card.vue'
 import tabpagination from '../components/tabpagination.vue';
 import {playsound,worngSound,colletSound} from '../composable/sound.js'
-
 import TableVocabInCategory from '../components/TableVocabInCategory.vue';
-import Iconsong from '../components/song/Iconsong.vue';
 
 // แยกคอมโพเนน ของหน้าที่เปลี่ยนได้
 onBeforeMount(async ()=>{
@@ -34,11 +32,11 @@ const msg_error=ref("")
 const msg_complete=ref("")
 const job=ref("")
 let countPage = ref(1) //หน้า ที่ Show pagination
-let countId = 100 // id ตอนเพิ่ม categories
+let countId = ref() // id ตอนเพิ่ม categories
 
 const checkid=()=>{
-  let x=CategoryAll.value.length
-  countId=x+1
+  let countId=CategoryAll.value[CategoryAll.value.length-1].id
+  console.log(countId)
 }
 const closealert=()=>{
      alert.value=false
@@ -65,8 +63,6 @@ const EditCategoryfunc= (i) =>{
     if(typeof checknumber.value!="number"){ 
             checknumber.value=NaN
         }
-  
-
     EditCategory.value=!EditCategory.value
     playsound()
   }
@@ -81,11 +77,11 @@ const addVocab = () => {
       
   
         TemporaryVocab.value={word:'',meaning:''}
+        colletSound()
     }
     else{
-        alert('please enter Category name')
+        ErrorModification('Cannot add duplicate vocab')
     }
-    colletSound()
 }
 // กด ปุ่ม close ตอน add vocab
 const clear = () =>{
@@ -172,9 +168,8 @@ const deleteCategory =async (event)=>{
 
 
 const AddCategory =async (event)=>{
-  
-  countId ++ 
   let id = event.target.id
+  countId ++ 
     if(TemporaryName.value.length<15 && TemporaryGroupVocabs.value.length>1 && CategoryAll.value.every((x)=>x.CategoryName!==TemporaryName.value)){
       try {
     const res = await fetch(`http://localhost:5000/Categoties/${id}`, {
