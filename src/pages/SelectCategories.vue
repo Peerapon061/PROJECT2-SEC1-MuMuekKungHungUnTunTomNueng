@@ -81,11 +81,11 @@ const addVocab = () => {
       
   
         TemporaryVocab.value={word:'',meaning:''}
+        colletSound()
     }
     else{
-        alert('please enter Category name')
+       ErrorModification('Cannot Add duplicate word')
     }
-    colletSound()
 }
 // กด ปุ่ม close ตอน add vocab
 const clear = () =>{
@@ -96,6 +96,7 @@ const clear = () =>{
 const deleteVocab = (event) =>{
   
     TemporaryGroupVocabs.value = TemporaryGroupVocabs.value.filter((Vocab)=>Vocab.word!==event.target.id)
+    colletSound()
 }
 
 
@@ -373,7 +374,7 @@ try {
             {{ Vocab.meaning}}
           </div>
         </td>
-        <td><span :id=Vocab.word @click="deleteVocab" class="text-3xl text-red-700 font-extrabold"> X </span></td>
+        <td><span :id=Vocab.word @click="deleteVocab " class="text-3xl text-red-700 font-extrabold"> X </span></td>
       </tr>
     
 

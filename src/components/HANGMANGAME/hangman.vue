@@ -52,7 +52,7 @@ const status = computed(()=>
     }
 
     if(letters.value.every(l => correctLetters.value.includes(l))){
-        ++noQuestion
+        ++noQuestion.value
         
         playsoundS()
         return 'win'
@@ -63,6 +63,7 @@ const status = computed(()=>
 const reset = () => {
     guessedLetters.value =[]
     count.value=0
+    noQuestion.value=0
     mygamelist.value=mygame.value.createdgame()
     word.value = allWord.value[mygamelist.value[0]].word
     resetkb.value++
@@ -142,5 +143,3 @@ function playsoundS(para){
 </template>
 <style scoped>
 </style>
-
->>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c
