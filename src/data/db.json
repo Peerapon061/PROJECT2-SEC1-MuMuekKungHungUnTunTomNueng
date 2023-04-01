@@ -35,24 +35,6 @@
         }
       ],
       "id": 4
-    },
-    {
-      "CategoryName": "weqwewe",
-      "vocabs": [
-        {
-          "id": 20,
-          "word": "a",
-          "meaning": "sd",
-          "status": false
-        },
-        {
-          "id": 21,
-          "word": "awe",
-          "meaning": "a",
-          "status": false
-        }
-      ],
-      "id": 6
     }
   ]
 }

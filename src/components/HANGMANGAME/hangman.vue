@@ -27,10 +27,6 @@ const clickKd =(event)=>{
            const letter = event.toLowerCase()
          guessedLetters.value.push(letter);        
 
-
-
-
-
 }
 const emits = defineEmits(["ending","chang"])
 let mygame=ref(new game(allWord.value))
@@ -150,5 +146,3 @@ function playsoundS(para){
 </template>
 <style scoped>
 </style>
-
->>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c
