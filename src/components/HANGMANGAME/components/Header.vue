@@ -4,7 +4,7 @@
 const props = defineProps({
   wrongcount: { type: Number, default: 0 },
   name: { type: String, default: "Hangman" },
-  CountWord:{type:Number},
+  CountWord:{type:Number },
   AllWordNo:{type:Number}
   
   

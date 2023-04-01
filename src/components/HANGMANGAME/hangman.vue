@@ -20,10 +20,17 @@ const props = defineProps({
 
 let count=ref(0)
 const allWord =  ref(props.question)
-let noQuestion=ref(0)
+
+
+let noQuestion =  ref(0)
 const clickKd =(event)=>{
            const letter = event.toLowerCase()
          guessedLetters.value.push(letter);        
+
+
+
+
+
 }
 const emits = defineEmits(["ending","chang"])
 let mygame=ref(new game(allWord.value))
@@ -52,7 +59,7 @@ const status = computed(()=>
     }
 
     if(letters.value.every(l => correctLetters.value.includes(l))){
-        ++noQuestion
+        ++noQuestion.value
         
         playsoundS()
         return 'win'
@@ -67,6 +74,7 @@ const reset = () => {
     word.value = allWord.value[mygamelist.value[0]].word
     resetkb.value++
     endgame.value=0
+    noQuestion.value=0  
     playsound()
 }
 
