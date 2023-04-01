@@ -4,13 +4,13 @@
       "CategoryName": "Activity",
       "vocabs": [
         {
-          "id": 318,
+          "id": 8,
           "word": "reading",
           "meaning": "book",
           "status": false
         },
         {
-          "id": 319,
+          "id": 9,
           "word": "swimmimg",
           "meaning": "water",
           "status": false
@@ -22,13 +22,13 @@
       "CategoryName": "Animal-1",
       "vocabs": [
         {
-          "id": 3,
-          "word": "mokey",
+          "id": 4,
+          "word": "money",
           "meaning": "ลิงกัง",
           "status": false
         },
         {
-          "id": 4,
+          "id": 5,
           "word": "dog",
           "meaning": "สุนัข",
           "status": false
@@ -37,107 +37,22 @@
       "id": 4
     },
     {
-      "CategoryName": "member",
+      "CategoryName": "weqwewe",
       "vocabs": [
         {
-<<<<<<< HEAD
-          "id": 15,
-=======
-          "id": 200,
->>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c
-          "word": "nutnon",
-          "meaning": "นัทนนท์",
+          "id": 20,
+          "word": "a",
+          "meaning": "sd",
           "status": false
         },
         {
-<<<<<<< HEAD
-          "id": 16,
-=======
-          "id": 201,
->>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c
-          "word": "pin",
-          "meaning": "พิณ",
-          "status": false
-        },
-        {
-<<<<<<< HEAD
-          "id": 17,
-=======
-          "id": 202,
->>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c
-          "word": "seum",
-          "meaning": "เซียม",
-          "status": false
-        },
-        {
-<<<<<<< HEAD
-          "id": 18,
-=======
-          "id": 203,
->>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c
-          "word": "pee",
-          "meaning": "พี",
+          "id": 21,
+          "word": "awe",
+          "meaning": "a",
           "status": false
         }
       ],
       "id": 6
-<<<<<<< HEAD
-=======
-    },
-    {
-      "CategoryName": "dd",
-      "vocabs": [
-        {
-          "id": 10,
-          "word": "r3w",
-          "meaning": "rw",
-          "status": false
-        },
-        {
-          "id": 11,
-          "word": "wa",
-          "meaning": "wa",
-          "status": false
-        }
-      ],
-      "id": 7
-    },
-    {
-      "CategoryName": "dwa",
-      "vocabs": [
-        {
-          "id": 35,
-          "word": "dwas",
-          "meaning": "dd",
-          "status": false
-        },
-        {
-          "id": 36,
-          "word": "wasa",
-          "meaning": "dwa",
-          "status": false
-        }
-      ],
-      "id": 11
-    },
-    {
-      "id": 9,
-      "CategoryName": "dw",
-      "vocabs": [
-        {
-          "id": 73,
-          "word": "daw",
-          "meaning": "dwa",
-          "status": false
-        },
-        {
-          "id": 74,
-          "word": "dwas",
-          "meaning": "s",
-          "status": false
-        }
-      ]
->>>>>>> b5e3f4b246f316f95d399110edbfe348a6c9aa1c
     }
   ]
 }
