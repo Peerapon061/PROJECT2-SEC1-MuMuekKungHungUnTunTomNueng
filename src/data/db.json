@@ -4,175 +4,19 @@
       "CategoryName": "Activity",
       "vocabs": [
         {
-          "id": 8,
+          "id": 1,
           "word": "reading",
           "meaning": "book",
           "status": false
         },
         {
-          "id": 9,
+          "id": 2,
           "word": "swimmimg",
           "meaning": "water",
           "status": false
         }
       ],
       "id": 1
-    },
-    {
-      "id": 2,
-      "CategoryName": "asdasd",
-      "vocabs": [
-        {
-          "id": 3,
-          "word": "asd",
-          "meaning": "asdasd",
-          "status": false
-        },
-        {
-          "id": 4,
-          "word": "asdas",
-          "meaning": "asdasd",
-          "status": false
-        },
-        {
-          "id": 5,
-          "word": "qq",
-          "meaning": "www",
-          "status": false
-        },
-        {
-          "id": 6,
-          "word": "cc",
-          "meaning": "cc",
-          "status": false
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "CategoryName": "xxx",
-      "vocabs": [
-        {
-          "id": 7,
-          "word": "ccccc",
-          "meaning": "cccc",
-          "status": false
-        },
-        {
-          "id": 8,
-          "word": "zzz",
-          "meaning": "zzz",
-          "status": false
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "CategoryName": "sdsd",
-      "vocabs": [
-        {
-          "id": 11,
-          "word": "dfdf",
-          "meaning": "dfdf",
-          "status": false
-        },
-        {
-          "id": 12,
-          "word": "aa",
-          "meaning": "ssss",
-          "status": false
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "CategoryName": "aaa",
-      "vocabs": [
-        {
-          "id": 11,
-          "word": "aa",
-          "meaning": "aaa",
-          "status": false
-        },
-        {
-          "id": 12,
-          "word": "sss",
-          "meaning": "sss",
-          "status": false
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "CategoryName": "sss",
-      "vocabs": [
-        {
-          "id": 13,
-          "word": "asds",
-          "meaning": "sdasd",
-          "status": false
-        },
-        {
-          "id": 14,
-          "word": "sdsd",
-          "meaning": "asas",
-          "status": false
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "CategoryName": "sasdasdasd",
-      "vocabs": [
-        {
-          "id": 15,
-          "word": "zxzx",
-          "meaning": "xc",
-          "status": false
-        },
-        {
-          "id": 16,
-          "word": "xxx",
-          "meaning": "ccc",
-          "status": false
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "CategoryName": "asdsd",
-      "vocabs": [
-        {
-          "id": 17,
-          "word": "sdas",
-          "meaning": "asdasd",
-          "status": false
-        },
-        {
-          "id": 18,
-          "word": "asd",
-          "meaning": "sdsaas",
-          "status": false
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "CategoryName": "kjkjkj",
-      "vocabs": [
-        {
-          "id": 19,
-          "word": "kjkknkk",
-          "meaning": "gfgf",
-          "status": false
-        },
-        {
-          "id": 20,
-          "word": "jhjhjh",
-          "meaning": "sasasa",
-          "status": false
-        }
-      ]
     }
   ]
 }

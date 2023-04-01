@@ -35,8 +35,7 @@ let countPage = ref(1) //หน้า ที่ Show pagination
 let countId = ref() // id ตอนเพิ่ม categories
 
 const checkid=()=>{
-  let countId=CategoryAll.value[CategoryAll.value.length-1].id
-  console.log(countId)
+  countId.value=CategoryAll.value[CategoryAll.value.length-1].id
 }
 const closealert=()=>{
      alert.value=false
@@ -68,7 +67,7 @@ const EditCategoryfunc= (i) =>{
   }
 const addVocab = () => {
   //เชคว่าชื่อไม่ซ้ำ
-    if(TemporaryGroupVocabs.value.every(x=>x.word !== TemporaryVocab.value.word) && TemporaryVocab.value.word.length>0 && TemporaryVocab.value.meaning.length>0 ){
+    if(TemporaryGroupVocabs.value.every(x=>x.word !== TemporaryVocab.value.word) && TemporaryVocab.value.word.length>0 && TemporaryVocab.value.meaning.length>0 && isNaN(TemporaryVocab.value.word)){
     
    
 
@@ -80,7 +79,12 @@ const addVocab = () => {
         colletSound()
     }
     else{
+      if (!isNaN(TemporaryVocab.value.word)) {
+        ErrorModification('Cannot add number vocab')
+      }
+      else{
         ErrorModification('Cannot add duplicate vocab')
+      }
     }
 }
 // กด ปุ่ม close ตอน add vocab
@@ -169,7 +173,7 @@ const deleteCategory =async (event)=>{
 
 const AddCategory =async (event)=>{
   let id = event.target.id
-  countId ++ 
+  countId.value ++ 
     if(TemporaryName.value.length<15 && TemporaryGroupVocabs.value.length>1 && CategoryAll.value.every((x)=>x.CategoryName!==TemporaryName.value)){
       try {
     const res = await fetch(`http://localhost:5000/Categoties/${id}`, {
@@ -177,10 +181,10 @@ const AddCategory =async (event)=>{
       headers: {
     "Content-Type": "application/json",
       },
-      body: JSON.stringify({id:countId,CategoryName:TemporaryName.value,vocabs:TemporaryGroupVocabs.value})
+      body: JSON.stringify({id:countId.value,CategoryName:TemporaryName.value,vocabs:TemporaryGroupVocabs.value})
     });
     if (res.ok) {
-      CategoryAll.value.push({id:countId,CategoryName:TemporaryName.value,vocabs:TemporaryGroupVocabs.value})
+      CategoryAll.value.push({id:countId.value,CategoryName:TemporaryName.value,vocabs:TemporaryGroupVocabs.value})
       TemporaryGroupVocabs.value=[]
       TemporaryName.value =""
       alert.value=true
@@ -400,13 +404,13 @@ try {
 </div>
          </div>
         </div> 
-        <div class="w-full  h-full flex flex-col overflow-auto space-y-5  " v-show="page.show && !alert_error"  >
+        <div class="w-full  h-full flex flex-col overflow-auto space-y-5  " v-show="page.show && !alert"  >
         
           <!-- ส่วนแก้ไขชื่อ Category-->
          
           
           <!-- -->
-          <div class="flex w-full " > 
+          <div class="flex w-full "> 
             
             <button @click="changPage" 
             class="w-35 flex  h-20 py-4   space-x-3 bg-lime-500 left-11 relative border-4 border-black/20    hover:bg-lime-700 text-white font-bold px-4  rounded-2xl"
