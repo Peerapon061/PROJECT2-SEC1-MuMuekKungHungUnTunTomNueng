@@ -24,8 +24,8 @@
 Video : https://youtu.be/mwjBIvbexgc
 
 แรงบันดาลใจ : 
- - https://www.gamestolearnenglish.com/hangman/ 
- - สิ่งที่นำมาใช้ : มีการนำรูปแบบปุ่มของ การเลือก Content ภายในเกมดังกล่าวมาใช้
+ - https://www.gamestolearnenglish.com/hangman/  <br>
+ - สิ่งที่นำมาใช้ : มีการนำรูปแบบปุ่มของ การเลือก Content ภายในเกมดังกล่าวมาใช้ <br>
 
 ## สรุปการทำงานในแต่ละ Week
 
